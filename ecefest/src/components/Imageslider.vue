@@ -188,18 +188,18 @@ export default {
           
         items : [{
           title: 'JNTUA - KALIKIRI',
-          img: require('../images/img1.jpg'),
+          img: 'https://i.imgur.com/dBJvxC3.jpg',
           content: 'JNTUA college of engineering Kalikiri is a constituent of JNTU Anantapur, catering the needs and dreams of rural students of Rayalaseema in particular and Andhra Pradesh in general. JNTUA college of engineering kalikiri is just 45kms away from Madanapalle en route to Tirupati and just 75kms away from Tirupati. The college started functioning from the academic year 2013-2014 as the 3rd constituent college of JNTUA. The campus is spread on sprawling 107.2 acres with various departments & labs housed in built up area of 11,43,713 sq.ft.',
           website: 'http://www.jntuacek.ac.in/about-us/'
           }, {
           title: 'ECE DEPT',
-          img: require('../images/img2.jpg'),
+          img: 'https://i.imgur.com/UBKjUta.jpg',
           content: 'ECE is an initialism with disparate meanings including electronics and communication Engineering, discipline that combines Electronics Engineering, Computer information and Communication technology and stands high in its objectives and outcomes. Its heritage includes nearly 250 students.',
           website: 'http://www.jntuacek.ac.in/department/electrical-electronics-engineering/about-the-department-2/'
 
           }, {
           title: 'ECLATES',
-          img: require('../images/img3.jpg'),
+          img: 'https://i.imgur.com/Wfj57Q2.jpg',
           content: 'ÉCLATECS 2K19 is a 2 days national level students technical symposium being conducted by the department of ECE. The objective of this fest is to create a common platform for participants from various colleges to share, improve & focus on present technological advancements. It also improves technical knowledge in various fields of electronics & communication.',
           website: 'http://www.knowafest.com/college-fests/events/2017/02/2006-eclatecs-2017-jntua-college-engineering-kalikiri-technical-fest-chittoor'
           }]

@@ -6,7 +6,13 @@ import Participants from "@/components/Participants";
 Vue.use(Router);
 
 const router = new Router({
+  mode: "history",
+
   routes: [
+    {
+      path: "*",
+      redirect: "/"
+    },
     {
       path: "/",
       name: "Home",
@@ -20,13 +26,11 @@ const router = new Router({
   ]
 });
 
-
-
 router.beforeResolve((to, from, next) => {
   // If this isn't an initial page load.
   if (to.name) {
     // Start the route progress bar.
-    
+
     NProgress.start();
     NProgress.set(2);
   }

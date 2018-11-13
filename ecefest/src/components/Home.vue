@@ -1,22 +1,25 @@
 <template>
   <div class="maincontainer">
+    <div class="warn">
+      <h2> Work Under Progress <br> Come Back Later....</h2>
+    </div>
     <div class="container headerone" id="home">
-      <div class="nav">
+      <!-- <div class="nav">
         <nav class="logonav">
-          <!-- <router-link to="/" id="logo">logo</router-link> -->
-          <!-- <router-link to="/"><img id="colglogo" src="../images/clglogo.png"/></router-link> -->
+          <router-link to="/" id="logo">logo</router-link>
+          <router-link to="/"><img id="colglogo" src="../images/clglogo.png"/></router-link>
             <ul class="mainnav">
               <li v-for="(navlink, index) in navlinks" :key="navlink.id">
                 <a  href="#" @click.prevent="goToDiv(index)"><span id="link">{{navlink}}</span></a>
               </li>
             </ul>
         </nav>
-      </div>
-
+      </div> -->
+      <Nav />
       <div class="left" >
         <h3>JNTUA'S</h3>
         <h1>ÉCLATECS</h1>
-        <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ipsum ea aliquam? Magni animi eligendi cupiditate modi sequi laudantium a! Illo modi delectus dicta minus facere porro. Maiores, perferendis quasi?  </p>
+        <p class="description">ÉCLATECS 2K19 is a 2 days national level students technical symposium  </p>
         <div class="registerBtn">
           <router-link to="/register">
             <button class="btnone btn regbtn">REGISTER NOW</button>
@@ -133,6 +136,7 @@
 <script>
 import Slides from './Slides.vue';
 import Imageslider from './Imageslider.vue';
+import Nav from './Nav.vue';
 
 export default {
   name: 'Home',
@@ -142,7 +146,7 @@ export default {
         hours : 0,
         minutes : 0,
         seconds : 0,
-        logo: "https://i.imgur.com/6RMD1VZ.png",
+        logo: "https://i.imgur.com/TLUTMfd.png",
         navlinks:[  'Contact Us' , 'About Us' , 'Home' ],
         persons : [
             {
@@ -175,14 +179,14 @@ export default {
             }
           ]
         },
-        {
-          name: 'TWITTER',
-          detail: [{
-              img: 'https://image.flaticon.com/icons/svg/733/733605.svg',
-               link: 'https://fb.com'
-            }
-          ]
-        },
+        // {
+        //   name: 'TWITTER',
+        //   detail: [{
+        //       img: 'https://image.flaticon.com/icons/svg/733/733605.svg',
+        //        link: 'https://fb.com'
+        //     }
+        //   ]
+        // },
     ]},
 
        
@@ -246,7 +250,7 @@ export default {
     this.initializeClock(ecefestdate);
   },
   components: {
-    Slides , Imageslider
+    Slides , Imageslider ,Nav
   }
 }
 </script>
@@ -336,8 +340,8 @@ body {
   color: black;
 }
 .headerone {
-  // background-image: url("../images/concert.jpg");
-  background-image: url("https://images.unsplash.com/photo-1542012499-f6bfceafab8b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4c490413dba7e912835cd4f710755727&auto=format&fit=crop&w=1050&q=80");
+  background-image: url("https://i.imgur.com/hetKAva.jpg");
+  // background-image: url("https://i.imgur.com/Bx2KnE5.jpg");
 
   background-position: center;
   background-repeat: no-repeat;
@@ -629,7 +633,7 @@ body {
     .links {
       color: #6a6975;
       display: grid;
-      grid-template-rows: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
 
       h1 {
         font-size: 0.8em;
@@ -995,6 +999,31 @@ body {
   .coordinatortitle {
     h1 {
       font-size: 1.5em;
+    }
+  }
+}
+
+.warn {
+  height: 10vh;
+  width: 100%;
+  h2 {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    margin: auto;
+    padding-top: 2vw;
+    text-align: center;
+  }
+  background-color: #003171;
+  color: white;
+}
+
+@media screen and (max-width: 410px) {
+  .warn {
+    height: 20vh;
+    h2 {
+      padding-top: 10vw;
     }
   }
 }

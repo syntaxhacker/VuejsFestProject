@@ -133,4 +133,10 @@ table {
 * {
   font-family: "Roboto", sans-serif;
   color: black;
+  ::selection {
+    background: #c5eff7; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+    background: #c5eff7; /* Gecko Browsers */
+  }
 }
