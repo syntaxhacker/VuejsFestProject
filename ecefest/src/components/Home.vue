@@ -7,13 +7,13 @@
           <!-- <router-link to="/"><img id="colglogo" src="../images/clglogo.png"/></router-link> -->
             <ul class="mainnav">
               <li v-for="(navlink, index) in navlinks" :key="navlink.id">
-                <a href="#" @click.prevent="goToDiv(index)"><span>{{navlink}}</span></a>
+                <a  href="#" @click.prevent="goToDiv(index)"><span id="link">{{navlink}}</span></a>
               </li>
             </ul>
         </nav>
       </div>
 
-      <div class="left">
+      <div class="left" >
         <h3>JNTUA'S</h3>
         <h1>ÉCLATECS</h1>
         <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ipsum ea aliquam? Magni animi eligendi cupiditate modi sequi laudantium a! Illo modi delectus dicta minus facere porro. Maiores, perferendis quasi?  </p>
@@ -25,7 +25,7 @@
         
       </div>
       <div class="right img1">
-        <img src="https://i.imgur.com/6RMD1VZ.png" class="logo" alt="festlogo">
+        <img :src="logo" class="logo" alt="festlogo">
       </div>
           
     
@@ -70,12 +70,14 @@
   </div>
   <div class="container" id="venuedetails">
     <div class="eventlogo">
-      <img src="../images/logo.svg" class="svg venuelogo" alt="venuelogo">
+      <img :src="logo" class="svg venuelogo" alt="venuelogo">
     </div>
     <div class="locationdetails">
       <div class="locationdetailsintext">
-      <h1>Venue :<span class="eventname"> JNTUAK</span> </h1>
-      <h1>DETAILS : <span class="eventname">  ECLATECS 2K19 is fest conducted by ECE Department </span></h1>
+      <h1>Venue :<span class="eventname"> JNTUA College of Engineering Kalikiri
+</span> </h1>
+      <h1>DETAILS : <span class="eventname">  Madanapalli Road, Kalikiri, Andhra Pradesh 517234
+</span></h1>
       </div>
       <div class="locationdetailsinmap">
       <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.103639601092!2d78.7824993144896!3d13.651459103289604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb28d2995aaaab3%3A0xc4ba9363ecd567ae!2sJNTUA+College+of+Engineering+Kalikiri!5e0!3m2!1sen!2sin!4v1541750063358" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -99,7 +101,6 @@
       </div>
       <div class="links">
           <div class="networknames" v-for="network in network.socialnetwork" :key="network.id">
-            <!-- <a href="https://fb.com">  -->
             <span>
                 <div v-for="image in network.detail" :key="image.id" style="text-align: center; display: inline-block;" >
                   <a :href="image.link" target="_blank"> 
@@ -116,14 +117,15 @@
     <div class="contactus title">
       <h1>CONTACT US</h1>
     </div>
-     <div class="registerBtn2">
+   
+    <div class="registerBtn2">
         <router-link to="/register">
           <button class="btn btnone">REGISTER NOW</button>
           <button class="btn btntwo"> → </button>
         </router-link>
-        </div>
-        
+    </div>     
   </div>
+   
 </div>
  
 </template>
@@ -131,7 +133,6 @@
 <script>
 import Slides from './Slides.vue';
 import Imageslider from './Imageslider.vue';
-
 
 export default {
   name: 'Home',
@@ -141,7 +142,8 @@ export default {
         hours : 0,
         minutes : 0,
         seconds : 0,
-        navlinks:[  'CONTACT US' , 'ABOUT US' , 'HOME' ],
+        logo: "https://i.imgur.com/6RMD1VZ.png",
+        navlinks:[  'Contact Us' , 'About Us' , 'Home' ],
         persons : [
             {
                 name : 'person1',
@@ -152,12 +154,7 @@ export default {
                 name : 'person2',
                 img  : "https://svgsilh.com/svg/1345143.svg",
                 para : 'something lorem ipsum watever'
-          },
-        {
-                name : 'person3',
-                img  : "https://svgsilh.com/svg/1345143.svg",
-                para : 'something lorem ipsum watever'
-          },],
+          }],
         id : '',
         network:{
         socialnetwork: [
@@ -166,7 +163,7 @@ export default {
             detail: [
               {
                 img: 'https://image.flaticon.com/icons/svg/733/733603.svg' ,
-                link: 'https://fb.com'
+                link: 'https://www.facebook.com/eclatecs2k19/'
               },
            ]
         },
@@ -174,7 +171,7 @@ export default {
           name: 'INSTAGRAM',
           detail: [{
               img: 'https://image.flaticon.com/icons/svg/733/733614.svg',
-              link: 'https://fb.com'
+              link: 'https://www.instagram.com/eclatecs_2k19/'
             }
           ]
         },
@@ -247,15 +244,23 @@ export default {
     
     var ecefestdate = new Date("February 21, 2019 00:00:00");
     this.initializeClock(ecefestdate);
-    
   },
   components: {
     Slides , Imageslider
   }
 }
 </script>
+
+
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+
+
 <style lang="scss"  scoped>
+.maincontainer {
+  scroll-snap-type: y proximity;
+  overflow-y: scroll;
+}
 * {
   font-family: "Roboto", sans-serif;
   .maincontainer {
@@ -263,10 +268,11 @@ export default {
   }
 }
 
-// #colglogo {
-//   width: 10em;
-//   height: 10em;
-// }
+#link {
+  color: white;
+  font-size: 1.2em;
+  font-weight: 300;
+}
 .locationdetailsintext {
   background-color: #003171;
   padding: 0 0 3% 5%;
@@ -330,8 +336,8 @@ body {
   color: black;
 }
 .headerone {
-  background-image: url("../images/concert.jpg");
-  // background-image: url("https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5e1962678b963243a5db226876738f5c&auto=format&fit=crop&w=1050&q=80");
+  // background-image: url("../images/concert.jpg");
+  background-image: url("https://images.unsplash.com/photo-1542012499-f6bfceafab8b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4c490413dba7e912835cd4f710755727&auto=format&fit=crop&w=1050&q=80");
 
   background-position: center;
   background-repeat: no-repeat;
@@ -346,21 +352,23 @@ body {
   height: 55vh;
 }
 .logo {
-  width: 40%;
+  width: 30%;
   height: auto;
   float: right;
-  right: 4em;
-  top: 4em;
+  right: 6em;
+  top: 6em;
   position: absolute;
 }
 
 .mainnav {
-  margin-right: 1em;
+  margin-right: 2em;
+  margin-top: 1.5em;
   li {
     margin: 1em 1.3em 1em 1em;
     font-weight: 100;
     float: right;
     list-style-type: none;
+
     a {
       color: white;
       text-decoration: none;
@@ -372,9 +380,9 @@ body {
   grid-template-rows: 0.3fr 0.3fr 0.5fr 0.5fr;
   color: white;
   position: absolute;
-  left: 2vw;
+  left: 5vw;
   top: 30%;
-  width: 50vw;
+  width: 60vw;
   h1 {
     font-size: 10vh;
     font-weight: 280;
@@ -407,18 +415,31 @@ body {
     font-weight: 700;
     margin: 20px 0px 0px 35px;
     color: black;
-    width: 280px;
+    width: 16em;
     margin-right: -10px;
   }
 
   .btntwo {
     background: black;
     color: white;
-    width: 100px;
+    width: 4em;
     font-size: 17px;
     font-weight: 600;
   }
   margin-bottom: 1.5em;
+}
+.registerBtn2 {
+  box-shadow: 0px 3px 38px -3px rgba(0, 0, 0, 0.73);
+  position: absolute;
+  top: -8%;
+  left: 35%;
+  margin: 0;
+  padding: 0;
+  .btnone {
+    margin: 0;
+    margin-right: -10px;
+    padding: 0;
+  }
 }
 
 .registerBtn {
@@ -438,7 +459,7 @@ body {
   height: 60px;
 }
 .svg-team {
-  width: 30vh;
+  width: 30vw;
   min-height: 26vh;
   max-height: 30vh;
 }
@@ -480,7 +501,8 @@ body {
 }
 #coordinatorsimgs {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+
   h1,
   p {
     color: #303740;
@@ -524,7 +546,10 @@ body {
     height: 260px;
   }
   .eventlogo {
-    background-color: #dce1e7;
+    padding-top: 15%;
+    justify-content: center;
+    text-align: center;
+    background-color: #003171;
   }
   h1,
   p {
@@ -546,8 +571,17 @@ body {
 
 .footer {
   position: relative;
+
+  padding-top: 5%;
+  color: #6a6975;
+
+  width: 100%;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
   .collegeref {
-    margin-left: 0em;
+    margin-left: 1em;
   }
   .collegename {
     color: #4e4d5a;
@@ -565,24 +599,21 @@ body {
     text-align: left;
     padding-left: 0.6em;
     line-height: 1.2em;
-    margin: 3em 0 1.6em 0;
+    margin: 3em 0 0 0;
   }
-  h1,
+  h1 {
+    font-size: 2em;
+  }
   p {
     margin-top: 22%;
     font-size: 2em;
   }
   text-align: center;
 
-  width: 100%;
-  height: 70vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-
   .social {
-    // margin: 50px;
+    color: #6a6975;
     .title {
-      margin-top: 20%;
+      // margin-top: 20%;
       padding-right: 2%;
     }
     display: grid;
@@ -591,18 +622,15 @@ body {
 
     h1 {
       font-size: 1.4em;
-      font-weight: 100;
+      font-weight: 400;
       margin: 0;
+      color: #6a6975;
     }
     .links {
+      color: #6a6975;
       display: grid;
-      grid-template-rows: repeat(4, 1fr);
-      .networknames {
-        padding-right: 0%;
-        font-size: 1em;
-        font-weight: 30;
-        margin-bottom: 0;
-      }
+      grid-template-rows: repeat(3, 1fr);
+
       h1 {
         font-size: 0.8em;
         float: right;
@@ -610,32 +638,10 @@ body {
     }
   }
   .contactus {
-    margin-top: 5%;
     h1 {
       color: #4e4d5a;
-      font-weight: 200;
-      font-size: 30px;
-    }
-  }
-
-  .registerBtn2 {
-    width: 40vw;
-    z-index: 999;
-    position: absolute;
-    left: 30%;
-    top: -8%;
-    margin-bottom: 0;
-    .btnone {
-      width: 180px;
-      font-weight: 600;
-      font-size: 13px;
-      margin: 20px 0px 0px 0px;
-      letter-spacing: 2px;
-      margin-right: -10px;
-      box-shadow: 0px 4px 30px 2px black;
-    }
-    .btntwo {
-      width: 80px;
+      font-weight: 400;
+      font-size: 1.4em;
     }
   }
 }
@@ -644,6 +650,27 @@ body {
   height: 40px;
   float: left;
 }
+
+@media only screen and (max-width: 475px) {
+  .footer {
+    height: 30vh;
+    padding-top: 15%;
+    font-size: 0.7em;
+  }
+  .contactus {
+    font-size: 0.8em;
+  }
+  .links {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: none;
+    padding-right: 0;
+    margin-right: 0;
+  }
+  .svg-social {
+    height: 20px !important;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .svg-circuit {
     top: -40vw;
@@ -668,6 +695,7 @@ body {
       color: black;
       width: 210px;
       margin-right: -10px;
+      transition: 0.5s;
     }
   }
   .left {
@@ -675,16 +703,17 @@ body {
     grid-template-rows: 0.3fr 0.2fr 0.5fr 0.5fr;
     position: absolute;
     left: 6vw;
-    top: 40%;
+    top: 45%;
     width: 90vw;
     h1 {
-      font-size: 5vh;
+      font-size: 8vw;
       font-weight: 280;
       letter-spacing: 4px;
       color: #fff;
     }
     h3 {
-      font-size: 1.5vh;
+      font-size: 3vw;
+      font-weight: 200;
       margin-bottom: 0vh;
       color: #fff;
       font-weight: 100;
@@ -751,16 +780,6 @@ body {
       left: 35%;
       padding-top: 10%;
     }
-    :nth-child(3) {
-      grid-column: span 2;
-      margin-bottom: 10%;
-      h1:after {
-        font-size: 50px;
-        width: 70px;
-        left: 40%;
-        padding-top: 7%;
-      }
-    }
   }
 }
 
@@ -770,9 +789,14 @@ body {
     height: 100%;
     display: grid;
     grid-template-columns: auto;
-    .locationdetailsinmap {
-      padding: 0 0 5% 6%;
-      margin: 0;
+
+    @media only screen and (min-width: 650px) {
+      .locationdetailsinmap {
+        padding: 0 0 5% 6%;
+        margin: 0;
+
+        grid-column: 1 / 2;
+      }
     }
 
     .eventname {
@@ -789,6 +813,7 @@ body {
       height: 15rem;
     }
     .eventlogo {
+      padding-top: 0%;
       background-color: #dce1e7;
       justify-content: center;
       text-align: center;
@@ -802,7 +827,7 @@ body {
     .locationdetails {
       background-color: #385073a9;
       display: grid;
-      grid-row-gap: 2%;
+      // grid-row-gap: 2%;
       grid-template-columns: none;
       grid-template-rows: auto 1fr;
     }
@@ -821,5 +846,156 @@ body {
   padding-right: 5%;
   // width: 40px;
   height: 40px;
+}
+
+@media only screen and (max-width: 745px) and (min-width: 600px) {
+  .logo {
+    width: 35%;
+    height: auto;
+    float: right;
+    right: 1.8em;
+    top: 8em;
+    position: absolute;
+  }
+  .left {
+    display: grid;
+    grid-template-rows: 0.3fr 0.2fr 0.5fr 0.5fr;
+    position: absolute;
+    left: 4vw;
+    top: 30%;
+    width: 70vw;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .left {
+    display: grid;
+    grid-template-rows: 0.3fr 0.2fr 0.5fr 0.5fr;
+    position: absolute;
+    left: 6vw;
+    top: 40%;
+    width: 90vw;
+    h1 {
+      font-size: 8vw;
+      font-weight: 280;
+      letter-spacing: 4px;
+      color: #fff;
+    }
+    h3 {
+      font-size: 3vw;
+      font-weight: 200;
+      margin-bottom: 0vh;
+      color: #fff;
+      font-weight: 100;
+      padding-left: 1%;
+      letter-spacing: 6px;
+    }
+    .description {
+      font-size: 2.2vh;
+      text-align: left;
+      color: #fff;
+      width: 100%;
+      font-weight: 150;
+      letter-spacing: 2px;
+      line-height: 1.2;
+      padding-left: 1%;
+      padding-top: 1%;
+      text-overflow: ellipsis;
+    }
+  }
+  .logo {
+    width: 40%;
+    height: auto;
+    float: right;
+    right: 6.6em;
+    top: 5em;
+    position: absolute;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .eventlogo {
+    padding-right: 15%;
+  }
+  .map {
+    padding-bottom: 5%;
+  }
+  #coordinatorsimgs {
+    margin-bottom: 5%;
+  }
+  .locationdetailsinmap {
+    padding: 0 0 5% 0;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .footer {
+    padding-top: 15%;
+  }
+  .registerBtn2 {
+    position: absolute;
+    top: -5%;
+    left: 15%;
+    margin: 0;
+    padding: 0;
+    .btnone {
+      margin: 0;
+      margin-right: -10px;
+      padding: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  .registerBtn2 {
+    top: -8%;
+    left: 25%;
+    .btnone {
+      width: 130px;
+      margin-right: -10px;
+      font-size: 12px;
+    }
+
+    .btntwo {
+      width: 60px;
+      font-size: 15px;
+    }
+    margin-bottom: 1.5em;
+  }
+}
+
+@media only screen and (max-height: 570px) {
+  .logo {
+    width: 27%;
+  }
+  .left {
+    h3 {
+      font-size: 3.4vw;
+      font-weight: 250;
+      margin-bottom: 0.3vh;
+      color: #fff;
+      padding-left: 1%;
+      letter-spacing: 6px;
+    }
+  }
+}
+@media only screen and (max-width: 464px) {
+  .map {
+    margin-left: 0.5em;
+  }
+
+  @media only screen and (max-width: 440px) {
+    #link {
+      font-size: 0.8em;
+    }
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .coordinatortitle {
+    h1 {
+      font-size: 1.5em;
+    }
+  }
 }
 </style>

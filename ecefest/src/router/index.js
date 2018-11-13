@@ -20,12 +20,15 @@ const router = new Router({
   ]
 });
 
+
+
 router.beforeResolve((to, from, next) => {
   // If this isn't an initial page load.
   if (to.name) {
     // Start the route progress bar.
+    
     NProgress.start();
-    NProgress.set(0.5);
+    NProgress.set(2);
   }
   next();
 });

@@ -5,15 +5,14 @@
   "author": "rohit j",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --host 0.0.0.0",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
   "dependencies": {
     "firebase": "^5.5.7",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1",
-    "vue2-google-maps": "^0.10.2"
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

@@ -57,7 +57,17 @@ button {
     line-height: 1.6;
   }
 }
+@media screen and (max-width: 410px) {
+  .slide {
+    margin-bottom: 3%;
+  }
 
+  #slider {
+    h1 {
+      margin-top: 5%;
+    }
+  }
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
