@@ -19,7 +19,7 @@
       <div class="left" >
         <h3>JNTUA'S</h3>
         <h1>ÉCLATECS</h1>
-        <p class="description">ÉCLATECS 2K19 is a 2 days national level students technical symposium  </p>
+        <p class="description">ECLATECS 2K19 is a 2 days national level students technical symposium ⚡ </p>
         <div class="registerBtn">
           <router-link to="/register">
             <button class="btnone btn regbtn">REGISTER NOW</button>
@@ -56,10 +56,10 @@
   <div class="container headerthree" id="coordinators">
     <div class="coordinatorsref">
       <div class="coordinatorssvg">
-        <img src="https://image.flaticon.com/icons/svg/476/476700.svg" alt="team" class="svg svg-team">
+        <img src="../images/team.svg" alt="team" class="svg svg-team">
       </div>
       <div class="coordinatortitle">
-        <h1 class="texttitle">CO ORDINATES</h1>
+        <h1 class="texttitle">Organisers</h1>
       </div>
     </div>
     <img src="../images/right.svg" alt="circuitsvg" class="svg-circuit">
@@ -92,9 +92,9 @@
     <div class="collegeref">
       <h1 class="collegename">JNTUAK</h1>
       <address>
-        D-415, Kamla Vihar,<br>
-        Mahavir Nagar,<br>
-        Kandivali(WEST). <br>
+        Madanapalli Road, <br>
+        Kalikiri,<br>
+        Andhra Pradesh 517234 <br>
       </address>
       <h3>All rights reserverd &copy;</h3>
     </div>
@@ -118,7 +118,9 @@
       </div>
     </div>
     <div class="contactus title">
-      <h1>CONTACT US</h1>
+      <h1>CONTACT US <span><img src="https://image.flaticon.com/icons/svg/9/9243.svg" alt="phone" ></span></h1>
+      <h2>+91 8121531215</h2>
+      <h2>+91 7780559482</h2>
     </div>
    
     <div class="registerBtn2">
@@ -150,14 +152,14 @@ export default {
         navlinks:[  'Contact Us' , 'About Us' , 'Home' ],
         persons : [
             {
-                name : 'person1',
+                name : 'P.Sai Swaroop',
                 img  : "https://svgsilh.com/svg/1345143.svg",
-                para : 'something lorem ipsum watever'
+                para : '🤘 So Excited 🤘'
           },
         {
-                name : 'person2',
+                name : 'G.Rakesh',
                 img  : "https://svgsilh.com/svg/1345143.svg",
-                para : 'something lorem ipsum watever'
+                para : 'Lets Rock and Roll 🤪'
           }],
         id : '',
         network:{
@@ -178,15 +180,7 @@ export default {
               link: 'https://www.instagram.com/eclatecs_2k19/'
             }
           ]
-        },
-        // {
-        //   name: 'TWITTER',
-        //   detail: [{
-        //       img: 'https://image.flaticon.com/icons/svg/733/733605.svg',
-        //        link: 'https://fb.com'
-        //     }
-        //   ]
-        // },
+        }
     ]},
 
        
@@ -278,10 +272,11 @@ export default {
   font-weight: 300;
 }
 .locationdetailsintext {
-  background-color: #003171;
+  background-color: #2f3542;
   padding: 0 0 3% 5%;
+
   .eventname {
-    color: #f2f1ef;
+    font-family: "Poppins";
     line-height: 1.4em;
     margin-left: 5%;
     padding-left: 5%;
@@ -340,7 +335,7 @@ body {
   color: black;
 }
 .headerone {
-  background-image: url("https://i.imgur.com/hetKAva.jpg");
+  background-image: url("https://i.imgur.com/ju1dSbc.jpg");
   // background-image: url("https://i.imgur.com/Bx2KnE5.jpg");
 
   background-position: center;
@@ -353,7 +348,7 @@ body {
 }
 .headerfour {
   width: 100%;
-  height: 55vh;
+  height: 45vh;
 }
 .logo {
   width: 30%;
@@ -380,6 +375,7 @@ body {
   }
 }
 .left {
+  //desktop
   display: grid;
   grid-template-rows: 0.3fr 0.3fr 0.5fr 0.5fr;
   color: white;
@@ -389,13 +385,13 @@ body {
   width: 60vw;
   h1 {
     font-size: 10vh;
-    font-weight: 280;
+    font-weight: 350;
     letter-spacing: 4px;
     color: #fff;
   }
   h3 {
     font-size: 3vh;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
     color: #fff;
     font-weight: 100;
     padding-left: 1%;
@@ -405,10 +401,12 @@ body {
     text-align: left;
     color: #fff;
     width: 80%;
-    font-weight: 150;
+    font-size: 1.3em;
+    font-weight: 450;
     letter-spacing: 2px;
     line-height: 1.2;
     padding-left: 1%;
+    padding-top: 5%;
     text-overflow: ellipsis;
   }
 }
@@ -454,7 +452,7 @@ body {
 }
 .headerthree {
   overflow: hidden;
-  background-color: #c5cacf;
+  background-color: #2d2d2d;
   position: relative;
   height: 30vh;
 }
@@ -463,6 +461,7 @@ body {
   height: 60px;
 }
 .svg-team {
+  color: white;
   width: 30vw;
   min-height: 26vh;
   max-height: 30vh;
@@ -484,7 +483,7 @@ body {
 }
 .coordinatortitle {
   h1 {
-    color: black;
+    color: white;
     font-size: 2em;
     padding-top: 6%;
     margin-left: 3%;
@@ -497,7 +496,8 @@ body {
     content: "";
     position: absolute;
     width: 70px;
-    border-bottom: 20px solid black;
+    border-bottom: 20px solid white;
+    border-radius: 5px;
     left: 0;
     bottom: -50%;
     border-style: solid;
@@ -512,7 +512,7 @@ body {
     color: #303740;
     align-content: center;
     text-align: center;
-    padding: 30px 0 5% 0;
+    padding: 3% 0 2% 0;
   }
   p {
     font-weight: 100;
@@ -528,9 +528,9 @@ body {
     position: absolute;
     font-size: 60px;
     color: #1f6ad1;
-    width: 70px;
+    width: 2em;
     left: 40%;
-    padding-top: 15%;
+    padding-top: 5%;
     border-style: none;
   }
   .svg-person {
@@ -553,7 +553,7 @@ body {
     padding-top: 15%;
     justify-content: center;
     text-align: center;
-    background-color: #003171;
+    background-color: #2f3542;
   }
   h1,
   p {
@@ -562,7 +562,7 @@ body {
     width: 25vh;
   }
   .locationdetails {
-    background-color: #385073;
+    background-color: #2d2d2d;
     display: grid;
     grid-template-columns: 0.7fr 1fr;
   }
@@ -643,9 +643,25 @@ body {
   }
   .contactus {
     h1 {
+      width: 30vw;
       color: #4e4d5a;
       font-weight: 400;
       font-size: 1.4em;
+      padding-left: 7%;
+      margin-bottom: 10%;
+    }
+    h2 {
+      margin-bottom: 5%;
+    }
+    span {
+      display: inline-block;
+    }
+    img {
+      // padding-left: 6em;
+      float: left;
+      width: 1em;
+      padding-left: 10%;
+      height: 1em;
     }
   }
 }
@@ -656,6 +672,7 @@ body {
 }
 
 @media only screen and (max-width: 475px) {
+  /// For Mobilee
   .footer {
     height: 30vh;
     padding-top: 15%;
@@ -678,9 +695,9 @@ body {
 @media only screen and (max-width: 600px) {
   .svg-circuit {
     top: -40vw;
-    right: -45vw;
-    width: 60vh;
-    height: 60vh;
+    right: -35vw;
+    width: 25em;
+    height: 25em;
   }
   #clockdiv {
     font-size: 25px;
@@ -717,7 +734,7 @@ body {
     }
     h3 {
       font-size: 3vw;
-      font-weight: 200;
+      font-weight: 400;
       margin-bottom: 0vh;
       color: #fff;
       font-weight: 100;
@@ -725,7 +742,8 @@ body {
       letter-spacing: 6px;
     }
     .description {
-      font-size: 2.2vh;
+      font-family: "Poppins";
+      // font-size: 2.2vh;
       text-align: left;
       color: #fff;
       width: 100%;
@@ -733,7 +751,7 @@ body {
       letter-spacing: 2px;
       line-height: 1.2;
       padding-left: 1%;
-      padding-top: 1%;
+      padding-top: 7%;
       text-overflow: ellipsis;
     }
   }
@@ -754,7 +772,8 @@ body {
     }
     h1::after {
       width: 70px;
-      border-bottom: 10px solid black;
+      border-bottom: 10px solid white;
+
       left: 0;
       bottom: -3vh;
     }
@@ -805,7 +824,6 @@ body {
 
     .eventname {
       line-height: 1.4em;
-      margin-left: 5%;
       margin: 0;
       padding-left: 5%;
     }
@@ -813,12 +831,11 @@ body {
       float: none;
     }
     .venuelogo {
-      width: 15rem;
-      height: 15rem;
+      width: 7rem;
+      height: 7rem;
     }
     .eventlogo {
-      padding-top: 0%;
-      background-color: #dce1e7;
+      padding-top: 5%;
       justify-content: center;
       text-align: center;
     }
@@ -826,23 +843,26 @@ body {
     p {
       color: #000;
       margin-top: 50px;
+      justify-content: center;
+      text-align: center;
       width: 25vh;
     }
     .locationdetails {
-      background-color: #385073a9;
+      background-color: #2d2d2d;
       display: grid;
       // grid-row-gap: 2%;
       grid-template-columns: none;
-      grid-template-rows: auto 1fr;
+      grid-template-rows: 0.2fr 1fr;
     }
   }
 }
 .locationdetailsintext {
   h1 {
-    font-size: 20px;
-    background-color: #1f4788;
-    padding: 0.3em;
+    font-size: 1em;
+    background-color: #f1f2f6;
+    padding: 1em;
     border-radius: 6px;
+    margin-left: 15%;
   }
 }
 
@@ -857,8 +877,8 @@ body {
     width: 35%;
     height: auto;
     float: right;
-    right: 1.8em;
-    top: 8em;
+    right: 1em;
+    top: 7em;
     position: absolute;
   }
   .left {
@@ -872,30 +892,33 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
+  .headerone {
+    background-image: url("https://i.imgur.com/n4al76Z.jpg");
+  }
   .left {
     display: grid;
     grid-template-rows: 0.3fr 0.2fr 0.5fr 0.5fr;
     position: absolute;
     left: 6vw;
-    top: 40%;
+    top: 50%;
     width: 90vw;
     h1 {
       font-size: 8vw;
-      font-weight: 280;
+      font-weight: 450;
       letter-spacing: 4px;
       color: #fff;
     }
     h3 {
       font-size: 3vw;
-      font-weight: 200;
-      margin-bottom: 0vh;
+      font-weight: 300;
+      margin-bottom: 5%;
       color: #fff;
       font-weight: 100;
       padding-left: 1%;
       letter-spacing: 6px;
     }
     .description {
-      font-size: 2.2vh;
+      font-size: 0.7em;
       text-align: left;
       color: #fff;
       width: 100%;
@@ -904,15 +927,16 @@ body {
       line-height: 1.2;
       padding-left: 1%;
       padding-top: 1%;
+      margin-top: 3%;
       text-overflow: ellipsis;
     }
   }
   .logo {
-    width: 40%;
+    width: 56%;
     height: auto;
     float: right;
-    right: 6.6em;
-    top: 5em;
+    right: 5em;
+    top: 3.7em;
     position: absolute;
   }
 }
@@ -925,7 +949,7 @@ body {
     padding-bottom: 5%;
   }
   #coordinatorsimgs {
-    margin-bottom: 5%;
+    margin-bottom: 10%;
   }
   .locationdetailsinmap {
     padding: 0 0 5% 0;
@@ -951,6 +975,10 @@ body {
 }
 
 @media only screen and (max-width: 465px) {
+  .headerthree {
+    height: 25vh;
+  }
+
   .registerBtn2 {
     top: -8%;
     left: 25%;
@@ -969,14 +997,12 @@ body {
 }
 
 @media only screen and (max-height: 570px) {
-  .logo {
-    width: 27%;
-  }
   .left {
+    top: 50%;
     h3 {
-      font-size: 3.4vw;
-      font-weight: 250;
-      margin-bottom: 0.3vh;
+      // font-size: 3.4vw;
+      font-weight: 300;
+      margin-bottom: 4%;
       color: #fff;
       padding-left: 1%;
       letter-spacing: 6px;
@@ -1015,8 +1041,48 @@ body {
     padding-top: 2vw;
     text-align: center;
   }
-  background-color: #003171;
+  background-color: #5352ed;
   color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .coordinatorsref {
+    width: 100vw;
+    height: 100%;
+    margin: 0 0 0 1%;
+    display: block;
+    // grid-template-columns: 0.3fr;
+    // grid-template-rows: 0.2fr 1fr;
+  }
+  .svg-team {
+    top: 5%;
+    left: 1em;
+    position: absolute;
+    width: 20vw;
+    min-height: 0;
+    height: 20vw;
+  }
+  .coordinatortitle {
+    h1 {
+      font-size: 1em;
+      padding-top: 0%;
+      margin-left: 3%;
+      margin-top: 25%;
+      vertical-align: bottom;
+      font-weight: 400;
+      width: 50vw;
+      position: relative;
+    }
+    h1::after {
+      content: "";
+      position: absolute;
+      width: 10em;
+      border-bottom: 10px solid;
+      left: 0em;
+      bottom: -160%;
+      border-style: solid;
+    }
+  }
 }
 
 @media screen and (max-width: 410px) {
