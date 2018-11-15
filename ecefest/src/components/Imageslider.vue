@@ -136,7 +136,12 @@ button {
 #slide4:checked ~ #slides .inner {
   margin-left: -300%;
 }
-
+#slides {
+  h1 {
+    font-size: 1.3em;
+    font-family: "Poppins";
+  }
+}
 input[type="radio"] {
   display: none;
 }

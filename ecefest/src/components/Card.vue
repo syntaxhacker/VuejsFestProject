@@ -2,14 +2,14 @@
     <div  class="eventcard techeventcard">
       <div class="svgarea">
         <!-- <img :src="img" alt="card" /> -->
-        <img :src="img" />
-        <h1 class="eventprice"> price {{ eventprice }} </h1>
+        <img :src="event1.img" />
+        <h1 class="eventprice"> {{ event1.price }} </h1>
       </div>
       
       
       <div class="eventlist">
-     <h1  v-for="(event ,key) in cardtext"  :key="event.id" :class="`eventheading heading${key}`">
-        {{ event.eventname }} 
+     <h1  v-for="(event ,key) in event1.technicaleventnames"  :key="event.id" :class="`eventheading heading${key}`">
+        {{ event }} 
      </h1>
      <button>{{ btnname }}</button>
      </div>
@@ -17,8 +17,9 @@
     </div>
 </template>
 <style lang="scss" scoped>
-html {
-  font-size: 17px;
+html,
+body {
+  font-size: 1em;
 }
 h1 {
   color: white;
@@ -49,7 +50,12 @@ h1 {
     font-weight: 100;
     padding-left: 20%;
   }
+
+  h1:after {
+    content: "₹";
+  }
 }
+
 img {
   width: 4em;
   height: 4em;
@@ -61,7 +67,8 @@ img {
   height: 100%;
   background-color: #240f50;
   border-radius: 5px;
-  box-shadow: 1px 0px 84px -9px rgba(36, 15, 80, 0.65);
+  // box-shadow: 1px 0px 84px -9px rgba(36, 15, 80, 0.65);
+  box-shadow: -1px 3px 55px 1px rgba(0, 0, 0, 0.75);
 }
 
 button {
@@ -70,7 +77,7 @@ button {
   float: right;
   width: 10em;
   margin-bottom: 5%;
-  height: 4em;
+  height: 3em;
   color: #240f50;
   text-align: center;
   border: 0;
@@ -81,23 +88,9 @@ button {
 <script>
 export default {
     name:'Card',
+    props: ["event1" , "event2"],
      data(){
       return {
-        img : '../images/contract.svg',
-        btnname : 'Register',
-        eventprice : '350/-',
-        cardtext : [
-            {
-                eventname : 'Paper Presentation',
-                
-          },
-        {
-                eventname : 'person2',
-                
-          },
-        {
-                eventname : 'person3',
-               
-          },]
+      
 }}}
 </script>

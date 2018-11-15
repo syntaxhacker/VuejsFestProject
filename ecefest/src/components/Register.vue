@@ -14,12 +14,15 @@
                 <h1>Techinal Events</h1>
             </div>
         </div>
-        <div class="card">
-          <Card />
+        <div class="card card1">
+          <Card :event1 = "technicalevents[0]"/>
         </div>
-         <div class="card">
-          <Card />
+        <div class="card card2">
+          <Card :event2 = "technicalevents[1]"/>
         </div>
+         <!-- <div class="card">
+          <Card />
+        </div> -->
     </div>
     
 
@@ -30,7 +33,9 @@
   color: white;
   background-color: #4d05e8;
 }
-
+.eventcontainer {
+  overflow: hidden;
+}
 .eventref {
   position: absolute;
 }
@@ -64,7 +69,7 @@ button {
   border: 0;
 }
 span.gobackwithsvg {
-  background: url("../images/left-arrow.svg") no-repeat center center;
+  background: url("https://svgur.com/i/9Lp.svg") no-repeat center center;
   outline: none;
   border: 0;
   background-size: contain;
@@ -83,7 +88,7 @@ span.gobackwithsvg {
 }
 .card {
   padding-left: 10%;
-  width: 100%;
+  width: 70%;
   height: 40vh;
 }
 </style>
@@ -94,6 +99,43 @@ span.gobackwithsvg {
 export default {
    
     name:'Register',
+    data(){
+      return{
+        
+        btnname : 'Register',
+        technicalevents: [
+          {
+
+              img : "https://svgur.com/i/9Nc.svg",
+              technicaleventnames : [ 'Paper Presentation' , 'Mini Projects' , 'Poster Presentation'] ,
+              price: '300'
+        },
+          {
+
+              img : "https://svgur.com/i/9Nc.svg",
+              technicaleventnames : [ 'Technical Quiz' , 'C Programming'] ,
+              price: '100'
+        },
+        
+        ] ,
+       
+        nontechnicalevents: [
+          {
+
+              img : "https://svgur.com/i/9Nc.svg",
+              nontechnicaleventnames : [ 'Short Flims' , 'Mini Projects' , 'Poster Presentation'] ,
+              price: '300'
+        },
+          {
+
+              img : "https://svgur.com/i/9Nc.svg",
+              technicaleventnames : [ 'Technical Quiz' , 'C Programming'] ,
+              price: '100'
+        },
+        
+        ] 
+        
+    }}, 
     components:{Card
 }}
 </script>

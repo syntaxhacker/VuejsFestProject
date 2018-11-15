@@ -17,7 +17,7 @@
       </div> -->
       <Nav />
       <div class="left" >
-        <h3>JNTUA'S</h3>
+        <h2>Department of <span class="dept"> ECE </span>Presents</h2>
         <h1>ÉCLATECS</h1>
         <p class="description">ECLATECS 2K19 is a 2 days national level students technical symposium ⚡ </p>
         <div class="registerBtn">
@@ -33,7 +33,7 @@
           
     
     <div id="clockdiv">
-      <h1>WE WILL BE COMMING SOON...</h1>
+      <h1>WE WILL BE COMING SOON...</h1>
       <div class="clockdivitem">
         <span :class="{ days }"> {{ days }} </span>
         <div class="smalltext">Days</div>
@@ -153,12 +153,12 @@ export default {
         persons : [
             {
                 name : 'P.Sai Swaroop',
-                img  : "https://svgsilh.com/svg/1345143.svg",
+                img  : "https://i.imgur.com/XKzhBlG.png",
                 para : '🤘 So Excited 🤘'
           },
         {
                 name : 'G.Rakesh',
-                img  : "https://svgsilh.com/svg/1345143.svg",
+                img  : "https://i.imgur.com/XKzhBlG.png",
                 para : 'Lets Rock and Roll 🤪'
           }],
         id : '',
@@ -1092,5 +1092,21 @@ body {
       padding-top: 10vw;
     }
   }
+}
+
+.left {
+  h2 {
+    color: white;
+    font-size: 1em;
+    margin-bottom: 5%;
+    font-weight: 100;
+    letter-spacing: 3px;
+  }
+}
+
+.dept {
+  color: white;
+  font-size: 1.5em;
+  font-weight: 400;
 }
 </style>

@@ -9,14 +9,14 @@
                 <i></i>
             </label>
             <div class="logo">
-                <a href="#">JNTUAK</a>
+                <a href="eclatecs.com">JNTUACEK</a>
             </div>
             <div class="nav-wrapper">
                 <ul>
                     <!-- <a  href="#" @click.prevent="goToDiv(index)"><span id="link">{{navlink}}</span></a> -->
                     <li><a href="#">Home</a> </li>
-                    <li><a href="#footer">About US</a> </li>
-                    <li><a href="#">Contact Us</a> </li>
+                    <li><a href="#slides">About US</a> </li>
+                    <li><a href="#footer">Contact Us</a> </li>
                    
                 </ul>
             </div>
@@ -60,12 +60,16 @@ nav ul {
 nav ul li {
   display: inline-block;
 }
+li:hover {
+  opacity: 1;
+}
 
 nav ul li:not(:first-child) {
   margin-left: 48px;
+  opacity: 0.8;
 }
 
-nav ul li:nth-child(4) {
+nav ul li:nth-child(3) {
   margin-right: 24px;
 }
 

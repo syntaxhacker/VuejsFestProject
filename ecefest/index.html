@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <meta name="description" content="ECLATECS 2K19 is a 2 days national level students technical symposium , Register Now.">
+    <meta
+      name="description"
+      content="ECLATECS 2K19 is a 2 days national level students technical symposium , Register Now."
+    />
     <meta name="theme-color" content="#222f3e" />
     <link
       rel="apple-touch-icon"
@@ -75,12 +78,51 @@
       href="https://fontlibrary.org/face/metropolis"
       type="text/css"
     />
+    <style>
+      [v-cloak] > * {
+        display: none;
+      }
+      [v-cloak]::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(50%, 50%);
+        z-index: 1;
+        width: 150px;
+        height: 150px;
+        margin: -75px 0 0 -75px;
+        border: 2px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 3px solid #180e0d;
+        width: 50px;
+        height: 50px;
 
+        animation: spin 0.3s linear infinite;
+      }
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
     <title>ÉCLATECS 2K19</title>
   </head>
 
   <body>
-    <div id="app"></div>
+    <div id="app" v-cloak></div>
     <!-- built files will be auto injected -->
     <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
   </body>
