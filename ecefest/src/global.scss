@@ -125,6 +125,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+button{
+  cursor: pointer;
+}
 .btn {
   box-shadow: none;
   outline: none;
@@ -140,3 +143,8 @@ table {
     background: #c5eff7; /* Gecko Browsers */
   }
 }
+
+#nprogress .bar {
+  background: white;
+}
+

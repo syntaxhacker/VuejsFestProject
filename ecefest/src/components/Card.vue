@@ -11,26 +11,31 @@
      <h1  v-for="(event ,key) in event1.technicaleventnames"  :key="event.id" :class="`eventheading heading${key}`">
         {{ event }} 
      </h1>
-     <button>{{ btnname }}</button>
+     <button>Register</button>
      </div>
-      
     </div>
+
+    
 </template>
 <style lang="scss" scoped>
+* {
+  font-family: "Caveat Brush", cursive;
+}
 html,
 body {
   font-size: 1em;
 }
 h1 {
   color: white;
-  font-size: 0.9em;
+  font-size: 1.2em;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 .techeventcard {
   display: grid;
   grid-template-columns: 0.5fr 1fr;
   .eventlist {
-    padding: 10% 0% 0% 10%;
+    padding: 10% 0% 0% 0%;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
   }
@@ -63,17 +68,16 @@ img {
 .eventcard {
   position: relative;
   width: 100%;
-  max-width: 50%;
+  min-width: 50%;
   height: 100%;
   background-color: #240f50;
-  border-radius: 5px;
-  // box-shadow: 1px 0px 84px -9px rgba(36, 15, 80, 0.65);
+  // border-radius: 5px;
   box-shadow: -1px 3px 55px 1px rgba(0, 0, 0, 0.75);
 }
 
 button {
   background-color: #fff;
-
+  font-family: "Roboto", sans-serif !important;
   float: right;
   width: 10em;
   margin-bottom: 5%;
@@ -88,7 +92,7 @@ button {
 <script>
 export default {
     name:'Card',
-    props: ["event1" , "event2"],
+    props: ["event1"],
      data(){
       return {
       

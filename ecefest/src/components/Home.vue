@@ -53,7 +53,7 @@
     </div>
   </div>
  <Imageslider />
-  <div class="container headerthree" id="coordinators">
+  <!-- <div class="container headerthree" id="coordinators">
     <div class="coordinatorsref">
       <div class="coordinatorssvg">
         <img src="../images/team.svg" alt="team" class="svg svg-team">
@@ -63,14 +63,24 @@
       </div>
     </div>
     <img src="../images/right.svg" alt="circuitsvg" class="svg-circuit">
-  </div>
-  <div class="container headerfour" id="coordinatorsimgs">
-    <div v-for="(person , key) in persons"  :key="person.id" :class="`details ${key}`" >
-      <img :src="person.img" :alt="`{person ${key}}`" class="svg svg-person">
-      <p> {{ person.para }} </p>
-      <h1> {{ person.name }} </h1>
+  </div> -->
+  <!-- <div class="container h
+   -->
+  <div class="events">
+    <img src="https://i.imgur.com/uLOUSeM.png" alt="pubgplayer" class="pubgplayer">
+    <div class="eventlist">
+ <h1 class="eventheading">Events <span class="gaming"><img class="xboxsvg" src="../images/console.svg" ></span> </h1>
+  <div class="eventcards" >
+    <div v-for="eventlist  in eventlists"
+  
+   :key="eventlist.id" :class="eventlist.classname" >
+      <img :src="eventlist.thumbnail" :alt="eventlist.classname">
+      <h2>{{ eventlist.name }}</h2>
+      <!-- <h1> {{ eventlist.price }} </h1> -->
     </div>
   </div>
+    </div>
+   </div>
   <div class="container" id="venuedetails">
     <div class="eventlogo">
       <img :src="logo" class="svg venuelogo" alt="venuelogo">
@@ -136,7 +146,6 @@
 </template>
 
 <script>
-import Slides from './Slides.vue';
 import Imageslider from './Imageslider.vue';
 import Nav from './Nav.vue';
 
@@ -149,6 +158,32 @@ export default {
         minutes : 0,
         seconds : 0,
         logo: "https://i.imgur.com/TLUTMfd.png",
+        eventlists:[
+          {
+            name:'Tournament',
+            thumbnail: "https://i.imgur.com/dXxHU0a.png",
+            price: '100/-',
+            classname:'pubgcard eventcard'
+          },
+          {
+            name:'ubsmash Contest',
+            thumbnail: "https://i.imgur.com/ekHXXeZ.png",
+            price: '50/-',
+            classname:'dubsmashcard eventcard'
+          },
+          {
+            name:'Selfie Contest',
+            thumbnail: "https://image.flaticon.com/icons/svg/1218/1218102.svg",
+            price: '50/-',
+            classname:'kulficard eventcard'
+          },
+          {
+            name:'Treasure Hunt',
+            thumbnail: "https://image.flaticon.com/icons/svg/1021/1021257.svg",
+            price: '100/-',
+            classname:'treasurecard eventcard'
+          },
+        ],
         navlinks:[  'Contact Us' , 'About Us' , 'Home' ],
         persons : [
             {
@@ -244,7 +279,7 @@ export default {
     this.initializeClock(ecefestdate);
   },
   components: {
-    Slides , Imageslider ,Nav
+     Imageslider ,Nav
   }
 }
 </script>
@@ -255,6 +290,9 @@ export default {
 
 
 <style lang="scss"  scoped>
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+@import url("https://fonts.googleapis.com/css?family=Caveat+Brush");
+
 .maincontainer {
   scroll-snap-type: y proximity;
   overflow-y: scroll;
@@ -1108,5 +1146,185 @@ body {
   color: white;
   font-size: 1.5em;
   font-weight: 400;
+}
+
+.events {
+  position: relative;
+  .gaming {
+    display: inline-block;
+  }
+  .eventlist {
+    img {
+      color: white;
+      width: 1.4em;
+      height: 1.4em;
+    }
+  }
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 70vh;
+  h1 {
+    font-family: "Permanent Marker", cursive !important;
+    color: white;
+    font-size: 3em;
+  }
+
+  width: 100%;
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+  // background-color: #ff0000;
+  // background-image: linear-gradient(315deg, #ff0000 0%, #ffed00 74%);// background-image: url("https://i.imgur.com/SkoFlCs.png") ;
+  background-repeat: no-repeat;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  overflow: hidden;
+
+  .eventcard {
+    box-shadow: -2px 8px 72px -6px rgba(0, 0, 0, 0.75);
+
+    background-color: #240f50;
+    padding: 3%;
+    border-radius: 10px;
+    img {
+      width: auto;
+      height: 6em;
+    }
+    h2 {
+      // font-family: "Roboto" !important;
+
+      font-family: "Caveat Brush", cursive !important;
+      color: white;
+      font-style: bold;
+      font-size: 2.5em;
+    }
+    h1 {
+      font-size: 3em;
+      color: white;
+
+      ::after {
+        content: "₹";
+      }
+    }
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+  }
+  .eventcards {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-row-gap: 5px;
+  }
+  .eventcard:not(:first-of-type) {
+    width: 70%;
+    height: 40%;
+
+    h2 {
+      margin-right: 3%;
+    }
+  }
+  .pubgcard {
+    background-color: #f5d020;
+    background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
+    border-radius: none;
+    width: 30%;
+    height: 20%;
+    position: absolute;
+    h2 {
+      margin-top: 5%;
+      font-size: 4em;
+      margin-right: 10%;
+      margin-left: 3%;
+    }
+    bottom: 2%;
+    left: 5%;
+  }
+  .dubsmashcard {
+    background-color: #310e68;
+    background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+    margin-top: 10%;
+  }
+  .kulficard {
+    background-color: #4c4177;
+    background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
+  }
+  .treasurecard {
+    background-color: #7f53ac;
+    background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+  }
+}
+
+.eventheading {
+  position: absolute;
+  top: 0;
+  left: 40%;
+}
+
+@media only screen and (max-width: 530px) {
+  .xboxsvg {
+    margin-bottom: -25%;
+  }
+  .events {
+    height: 80vh;
+    display: block;
+    .eventheading {
+      position: static;
+      margin-bottom: 6%;
+      margin-top: 2%;
+      margin-left: 5%;
+    }
+    .pubgplayer {
+      position: absolute;
+      top: 20%;
+      left: 0;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .eventcard {
+      img {
+        width: auto;
+        height: 4em;
+      }
+    }
+  }
+
+  .pubgcard {
+    position: static !important;
+  }
+  .dubsmashcard {
+    margin-top: 0 !important;
+  }
+  .eventcards {
+    z-index: 999 !important;
+    grid-row-gap: 0px !important;
+  }
+
+  .pubgcard {
+    width: 90% !important;
+    height: auto !important;
+    position: static !important;
+    margin-bottom: 12% !important;
+    h2 {
+      margin-top: 5% !important;
+      font-size: 1em !important;
+    }
+    bottom: 2%;
+    left: 5%;
+  }
+
+  .eventcard:not(:first-of-type) {
+    z-index: 999 !important;
+  }
+
+  .eventcard {
+    h2 {
+      font-size: 2em !important;
+    }
+  }
 }
 </style>

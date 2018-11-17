@@ -15,7 +15,7 @@
                 <ul>
                     <!-- <a  href="#" @click.prevent="goToDiv(index)"><span id="link">{{navlink}}</span></a> -->
                     <li><a href="#">Home</a> </li>
-                    <li><a href="#slides">About US</a> </li>
+                    <li><a href="#slides" @click.prevent="goToDiv()"  >About US</a> </li>
                     <li><a href="#footer">Contact Us</a> </li>
                    
                 </ul>
