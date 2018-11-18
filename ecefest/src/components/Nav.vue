@@ -2,7 +2,7 @@
   
     <div class="container">
         <nav>
-            <input type="checkbox" id="nav" class="hidden">
+            <input type="checkbox" id="nav" class="hidden" >
             <label for="nav" class="nav-btn">
                 <i></i>
                 <i></i>
@@ -14,9 +14,9 @@
             <div class="nav-wrapper">
                 <ul>
                     <!-- <a  href="#" @click.prevent="goToDiv(index)"><span id="link">{{navlink}}</span></a> -->
-                    <li><a href="#">Home</a> </li>
-                    <li><a href="#slides" @click.prevent="goToDiv()"  >About US</a> </li>
-                    <li><a href="#footer">Contact Us</a> </li>
+                    <li><a href="#" v-on:click="toggle">Home</a> </li>
+                    <li><a href="#slides" v-on:click="toggle">About US</a> </li>
+                    <li><a href="#footer" v-on:click="toggle">Contact Us</a> </li>
                    
                 </ul>
             </div>
@@ -216,22 +216,13 @@ nav ul li a {
 export default {
     name:'Nav',
     methods:{
-    goToDiv(index) {
-      let currentpos;
-      if(index === 0){
-        currentpos = "footer"
-      } 
-      if( index === 1){
-        currentpos = "slider"
-      } 
-      if( index == 2){
-        currentpos = "home"
+     
+      toggle() {
+          var checkBox = document.getElementsByClassName("hidden");
+          checkBox.nav.checked  = !checkBox.nav.checked;
       }
-      // console.log(index);
-      var elmnt = document.getElementById(`${currentpos}`);
-      elmnt.scrollIntoView();
-      var hidden = document.getElementsByClassName("hidden");
-      console.log(hidden.style);
-    }}
+    
+    }
+   
 }
 </script>

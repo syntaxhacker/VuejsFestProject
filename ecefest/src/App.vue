@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    
-    <transition name="fade" mode="out-in">  
-    <router-view/>
-    </transition>
+   
+     <transition name="fade-down" mode="out-in" appear>
+    <router-view></router-view>
+  </transition>
   </div>
 </template>
 
@@ -14,6 +14,4 @@ export default {
 </script>
 
 <style lang="scss" src="./global.scss">
-#app {
-}
 </style>
