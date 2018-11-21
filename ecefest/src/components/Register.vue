@@ -11,18 +11,21 @@
         <div class="events">
             <h1 class="heading"><span> <img src="https://svgur.com/i/9QG.svg" alt="idea" width="40px" height="40px"></span> Technical Events</h1>
         </div>
-        <div class="cardscontainer">
- <div class="card card1">
+        <!-- <div class="cardscontainer">
+         <div class="card card1">
           <Card :event1 = "technicalevents[0]"/>
         </div>
         <div class="card card2">
           <Card :event1 = "technicalevents[1]"/>
         </div>
+        </div> -->
+        <div class="blockscontainer">
+          <Eventblock :details = "techdetails"/>
         </div>
         <div class="nontecheventsheading">
             <h1 class="heading">Non <span> <img class="dancesvg" src="https://svgur.com/i/9Ru.svg" alt="dance" width="40px" height="40px"></span> Technical Events</h1>
         </div>
-      <div class="cardscontainer nontech">
+      <!-- <div class="cardscontainer nontech">
        <h1 class="shortflim">
          <span>
          <img class="videosvg" src="https://svgur.com/i/9PC.svg" alt="cam" >
@@ -41,7 +44,7 @@
           <h1 style="margin-bottom:3%;"><span><img src="https://image.flaticon.com/icons/svg/1218/1218102.svg" alt="dubsmash" ></span>Selfie Contest</h1>
         </div>
         <h1 class="rate" style="margin-top:0;vertical-align:baselline;padding-top:50%;">50/-</h1>
-     </div>
+     </div> -->
       <div class="eventheader copy">
          <router-link to="/">
                 <!-- <button class="goback"> back </button> -->
@@ -50,14 +53,72 @@
             <h1 style="font-size:2em;" class=" footertext">Go Back Home</h1>
            
         </div>
+         <div class="coolmodal">
+          <div class="modalcontent">
+            <div class="close" v-on:click="close" >+</div>
+              <section class="about">
+                <h1>About</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis incidunt, ab numquam dicta ad iste possimus sint, mollitia eos, deserunt iusto totam ea obcaecati repudiandae.</p>
+              </section>
+              <section class="details">
+                <h1>Details</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis incidunt, ab numquam dicta ad iste possimus sint, mollitia eos, deserunt iusto totam ea obcaecati repudiandae.</p>
+              </section>
+              <section class="contact">
+                <h1>Contact</h1>
+                <p>+91 xxxxxxxxxxx</p>
+              </section>
+              <a href="#">Register</a>
+          </div>
+        </div>
     </div>
-    
+   
 
 </template>
 <style lang="scss" scoped>
 * {
   font-family: "Roboto", sans-serif;
   color: white;
+}
+
+.coolmodal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  .modalcontent {
+    position: relative;
+    width: 50vw;
+    height: 70vh;
+    background-color: #fff;
+    border-radius: 3px;
+    text-align: center;
+    padding: 3em;
+
+    section > * {
+      color: #240f50;
+    }
+  }
+  .modalcontent > * {
+    color: #240f50;
+  }
+
+  .close {
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    font-size: 2em;
+    transform: rotate(45deg);
+    cursor: pointer;
+
+    &:hover {
+      font-size: 2.3em;
+    }
+  }
 }
 .eventcontainer {
   background-color: #4d05e8;
@@ -243,7 +304,7 @@ span.gobackwithsvg {
   right: 50%;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 600px) {
   * {
     font-size: 0.9em;
   }
@@ -332,10 +393,21 @@ span.gobackwithsvg {
     right: 20%;
   }
 }
+
+@media only screen and (max-width: 280px) {
+  * {
+    font-size: 0.8em;
+  }
+}
+
+.blockscontainer {
+  margin: 0 25%;
+}
 </style>
 
 <script>
- import Card from "./Card.vue";
+//  import Card from "./Card.vue";
+ import Eventblock from "./Eventblock.vue";
 export default {
    
     name:'Register',
@@ -343,39 +415,74 @@ export default {
       return{
         
         btnname : 'Register',
-        technicalevents: [
+        techdetails: [
           {
-
-              img : "https://svgur.com/i/9Qo.svg",
-              technicaleventnames : [ 'Paper Presentation' , 'Mini Projects' , 'Poster Presentation'] ,
-              price: '300'
-        },
+            img : "https://svgur.com/i/9Qo.svg",
+            name : 'Paper Presentation' ,
+            price: '300'
+          },
           {
+            img : "https://svgur.com/i/9Qo.svg",
+            name : 'Mini Projects' ,
+            price: '300'
+          },
+          {
+            img : "https://svgur.com/i/9Qo.svg",
+            name : 'Poster Presentation' ,
+            price: '300'
+          },
+          {
+            img : "https://svgur.com/i/9Qo.svg",
+            name : 'Technical Quiz' ,
+            price: '100'
+          },
+          {
+            img : "https://svgur.com/i/9Qo.svg",
+            name : 'C Programming' ,
+            price: '100'
+          },
+        ]
+    //     technicalevents: [
+    //       {
 
-              img : "https://svgur.com/i/9Rh.svg",
-              technicaleventnames : [ 'Technical Quiz' , 'C Programming'] ,
-              price: '100'
-        },
+    //           img : "https://svgur.com/i/9Qo.svg",
+    //           technicaleventnames : [ 'Paper Presentation' , 'Mini Projects' , 'Poster Presentation'] ,
+    //           price: '300'
+    //     },
+    //       {
+
+    //           img : "https://svgur.com/i/9Rh.svg",
+    //           technicaleventnames : [ 'Technical Quiz' , 'C Programming'] ,
+    //           price: '100'
+    //     },
         
-        ] ,
+    //     ] ,
        
-        nontechnicalevents: [
-          {
+    //     nontechnicalevents: [
+    //       {
               
-              img : "https://svgur.com/i/9PC.svg",
-              nontechnicaleventnames : [ 'Short Flims' , 'Mini Projects' , 'Poster Presentation'] ,
-              price: '250'
-        },
-          {
+    //           img : "https://svgur.com/i/9PC.svg",
+    //           nontechnicaleventnames : [ 'Short Flims' , 'Mini Projects' , 'Poster Presentation'] ,
+    //           price: '250'
+    //     },
+    //       {
 
-              img : "https://svgur.com/i/9Nc.svg",
-              technicaleventnames : [ 'Technical Quiz' , 'C Programming'] ,
-              price: '100'
-        },
+    //           img : "https://svgur.com/i/9Nc.svg",
+    //           technicaleventnames : [ 'Technical Quiz' , 'C Programming'] ,
+    //           price: '100'
+    //     },
         
-        ] 
+    //     ] 
         
     }}, 
-    components:{Card
-}}
+    components:{Eventblock
+},
+    methods:{
+
+        close(){
+            document.getElementsByClassName("coolmodal")[0].style.display ='none';              
+        }
+
+    }
+}
 </script>

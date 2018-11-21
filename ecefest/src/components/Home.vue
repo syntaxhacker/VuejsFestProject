@@ -106,7 +106,8 @@
         Kalikiri,<br>
         Andhra Pradesh 517234 <br>
       </address>
-      <h3>All rights reserverd &copy;</h3>
+      <!-- <h3>All rights reserverd &copy;</h3> -->
+      <h3>Design & development by <span><a href="https://www.linkedin.com/in/rohitjogi/" target="_blank"><img src="https://svgur.com/i/9TP.svg" width="20px" height="20px" style="padding-bottom:4px;"></a></span></h3>
     </div>
     <div class="social">
       <div class="title">
@@ -620,7 +621,7 @@ body {
   color: #6a6975;
 
   width: 100%;
-  height: 50vh;
+  height: 30vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
@@ -643,7 +644,7 @@ body {
     text-align: left;
     padding-left: 0.6em;
     line-height: 1.2em;
-    margin: 3em 0 0 0;
+    margin: 1em 0 0 0;
   }
   h1 {
     font-size: 2em;
@@ -722,10 +723,10 @@ body {
     font-size: 0.8em;
   }
   .links {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: none;
     padding-right: 0;
-    margin-right: 0;
+    margin-right: 0; 
   }
   .svg-social {
     height: 20px !important;
@@ -1329,7 +1330,6 @@ body {
     }
   }
 }
-
 
 .fade-down-enter-active {
   animation-name: fadeInDown;

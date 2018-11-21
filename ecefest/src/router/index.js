@@ -2,7 +2,6 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "@/components/Home";
 import Register from "@/components/Register";
-import Participants from "@/components/Participants";
 Vue.use(Router);
 
 const router = new Router({
