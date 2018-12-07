@@ -1,10 +1,8 @@
 <template>
-    <div class="block" v-on:click="modalevent" >
-        <img src="https://svgur.com/i/9Qo.svg" alt="" class="refimg">
-        <h1 class="name">Paper Presentation</h1>
-        <h1 class="priceofevent"> 300</h1>
-
-        <h1 v-for="detail in details" :key="detail.id" >{{ detail }}</h1>
+    <div class="block" v-on:click="modalevent"  >
+        <img :src="details.img" :alt="details.name" class="refimg">
+        <h1 class="name">{{ details.name }}</h1>
+        <h1 class="priceofevent"> {{ details.price }}</h1>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -17,6 +15,7 @@
   margin: 3% 0;
   display: grid;
   grid-template-columns: 0.5fr 1.5fr 0.5fr;
+  box-shadow: 0px 0px 27px -2px rgba(0, 0, 0, 0.75);
   .refimg {
     width: 3em;
     height: auto;
@@ -25,11 +24,22 @@
   .priceofevent {
     color: white;
     padding-top: 5%;
+    font-size: 1.5em;
+    // font-family: "Caveat Brush", cursive;
+    font-family: "Permanent Marker", cursive !important;
   }
-  transition: 0.4s ease-in-out;
+
+  .priceofevent {
+    &::after {
+      content: "₹";
+      margin-left: 2%;
+    }
+  }
+  transition: 0.2s ease-in-out;
   &:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 27px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 44px 1px rgba(0, 0, 0, 0.75);
+    transform: scale(1.1, 1.1);
   }
 }
 </style>

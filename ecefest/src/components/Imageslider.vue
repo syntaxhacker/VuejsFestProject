@@ -1,32 +1,33 @@
 <template>
-    <!-- <div id="demo"> -->
-        <div id="slider">
-        <input checked="" type="radio" name="slider" id="slide1" selected="false">
-        <input type="radio" name="slider" id="slide2" selected="false">
-        <input type="radio" name="slider" id="slide3" selected="false">
-        <input type="radio" name="slider" id="slide4" selected="false">
-        <div id="slides">
-           <h1>About Us</h1>
-        <div id="overflow">
-            <div class="inner">
-             
-            <article v-for="item in items" class="slide" :key="item.id">
-                <div class="image-container">
-                <img :src="item.img" alt="item.title" />
-                </div>
-                <div class="title">{{item.title}}</div>
-                <div class="teaser">{{item.content}}</div>
-                <!-- <a href="http://www.jntuacek.ac.in/about-us/" target="_blank"><button>READ MORE   → </button></a> -->
-                <a :href="item.website" target="_blank"><button>READ MORE   → </button></a>
-            </article>
-            </div> 
-        </div> 
+  <!-- <div id="demo"> -->
+  <div id="slider">
+    <input checked type="radio" name="slider" id="slide1" selected="false">
+    <input type="radio" name="slider" id="slide2" selected="false">
+    <input type="radio" name="slider" id="slide3" selected="false">
+    <input type="radio" name="slider" id="slide4" selected="false">
+    <div id="slides">
+      <h1>About Us</h1>
+      <div id="overflow">
+        <div class="inner">
+          <article v-for="item in items" class="slide" :key="item.id">
+            <div class="image-container">
+              <img :src="item.img" alt="item.title">
+            </div>
+            <div class="title">{{item.title}}</div>
+            <div class="teaser">{{item.content}}</div>
+            <!-- <a href="http://www.jntuacek.ac.in/about-us/" target="_blank"><button>READ MORE   → </button></a> -->
+            <a :href="item.website" target="_blank">
+              <button>READ MORE →</button>
+            </a>
+          </article>
         </div>
-        <label for="slide1"></label>
-        <label for="slide2"></label>
-        <label for="slide3"></label>
-        <!-- <label for="slide4"></label> -->
+      </div>
     </div>
+    <label for="slide1"></label>
+    <label for="slide2"></label>
+    <label for="slide3"></label>
+    <!-- <label for="slide4"></label> -->
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -188,25 +189,48 @@ button {
 
 <script>
 export default {
-    data(){
-        return{
-          
-        items : [{
-          title: 'JNTUA - KALIKIRI',
-          img: 'https://i.imgur.com/dBJvxC3.jpg',
-          content: 'JNTUA college of engineering Kalikiri is a constituent of JNTU Anantapur, catering the needs and dreams of rural students of Rayalaseema in particular and Andhra Pradesh in general. JNTUA college of engineering kalikiri is just 45kms away from Madanapalle en route to Tirupati and just 75kms away from Tirupati. The college started functioning from the academic year 2013-2014 as the 3rd constituent college of JNTUA. The campus is spread on sprawling 107.2 acres with various departments & labs housed in built up area of 11,43,713 sq.ft.',
-          website: 'http://www.jntuacek.ac.in/about-us/'
-          }, {
-          title: 'ECE DEPT',
-          img: 'https://i.imgur.com/UBKjUta.jpg',
-          content: 'ECE is an initialism with disparate meanings including electronics and communication Engineering, discipline that combines Electronics Engineering, Computer information and Communication technology and stands high in its objectives and outcomes. Its heritage includes nearly 250 students.',
-          website: 'http://www.jntuacek.ac.in/department/electrical-electronics-engineering/about-the-department-2/'
-
-          }, {
-          title: 'ECLATES',
-          img: 'https://i.imgur.com/Wfj57Q2.jpg',
-          content: 'ÉCLATECS 2K19 is a 2 days national level students technical symposium being conducted by the department of ECE. The objective of this fest is to create a common platform for participants from various colleges to share, improve & focus on present technological advancements. It also improves technical knowledge in various fields of electronics & communication.',
-          website: 'http://www.knowafest.com/college-fests/events/2017/02/2006-eclatecs-2017-jntua-college-engineering-kalikiri-technical-fest-chittoor'
-          }]
-    }}}
+  data() {
+    return {
+      items: [
+        {
+          title: "JNTUA - KALIKIRI",
+          img: "https://i.imgur.com/dBJvxC3.jpg",
+          content:
+            "JNTUA college of engineering Kalikiri is a constituent of JNTU Anantapur, catering the needs and dreams of rural students of Rayalaseema in particular and Andhra Pradesh in general. JNTUA college of engineering kalikiri is just 45kms away from Madanapalle en route to Tirupati and just 75kms away from Tirupati. The college started functioning from the academic year 2013-2014 as the 3rd constituent college of JNTUA. The campus is spread on sprawling 107.2 acres with various departments & labs housed in built up area of 11,43,713 sq.ft.",
+          website: "http://www.jntuacek.ac.in/about-us/"
+        },
+        {
+          title: "ECE DEPT",
+          img: "https://i.imgur.com/UBKjUta.jpg",
+          content:
+            "ECE is an initialism with disparate meanings including electronics and communication Engineering, discipline that combines Electronics Engineering, Computer information and Communication technology and stands high in its objectives and outcomes. Its heritage includes nearly 250 students.",
+          website:
+            "http://www.jntuacek.ac.in/department/electrical-electronics-engineering/about-the-department-2/"
+        },
+        {
+          title: "ECLATECS",
+          img: "https://i.imgur.com/Wfj57Q2.jpg",
+          content:
+            "ÉCLATECS 2K19 is a 2 days national level students technical symposium being conducted by the department of ECE. The objective of this fest is to create a common platform for participants from various colleges to share, improve & focus on present technological advancements. It also improves technical knowledge in various fields of electronics & communication.",
+          website:
+            "http://knowafest.com/college-fests/events/2018/11/1507-clatecs-2k19-jntua-college-engineering-kalikiri-chittoor"
+        }
+      ]
+    };
+  }
+  // methods: {
+  //   swipe() {
+  //     var el = document.getElementsByClassName("slide")[0];
+  //     // .addEventListener("touchstart", this.handleStart, false);
+  //     console.log(el);
+  //     console.log("initialized.");
+  //   },
+  //   handleStart(e) {
+  //     console.log(e);
+  //   }
+  // },
+  // created() {
+  //   this.swipe();
+  // }
+};
 </script>

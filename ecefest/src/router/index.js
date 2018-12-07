@@ -55,17 +55,3 @@ router.afterEach((to, from) => {
 
 export default router;
 
-// export default new Router({
-//   routes: [
-//     {
-//       path: "/",
-//       name: "Home",
-//       component: Home
-//     },
-//     {
-//       path: "/register",
-//       name: "Register",
-//       component: Register
-//     }
-//   ]
-// });

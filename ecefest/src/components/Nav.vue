@@ -1,28 +1,47 @@
 <template>
-  
-    <div class="container">
-        <nav>
-            <input type="checkbox" id="nav" class="hidden" >
-            <label for="nav" class="nav-btn">
-                <i></i>
-                <i></i>
-                <i></i>
-            </label>
-            <div class="logo">
-                <a href="eclatecs.com">JNTUACEK</a>
-            </div>
-            <div class="nav-wrapper">
-                <ul>
-                    <!-- <a  href="#" @click.prevent="goToDiv(index)"><span id="link">{{navlink}}</span></a> -->
-                    <li><a href="#" v-on:click="toggle">Home</a> </li>
-                    <li><a href="#slides" v-on:click="toggle">About US</a> </li>
-                    <li><a href="#footer" v-on:click="toggle">Contact Us</a> </li>
-                   
-                </ul>
-            </div>
-            
-        </nav>
-    </div>
+  <div class="container">
+    <nav>
+      <input type="checkbox" id="nav" class="hidden">
+      <label for="nav" class="nav-btn">
+        <i></i>
+        <i></i>
+        <i></i>
+      </label>
+      <div class="logo">
+        <a href="eclatecs.com">
+          <img src="https://svgshare.com/i/9mB.svg" alt="logo" style="width:7em;height:auto;">
+        </a>
+      </div>
+      <div class="nav-wrapper">
+        <ul>
+          <!-- <a  href="#" @click.prevent="goToDiv(index)"><span id="link">{{navlink}}</span></a> -->
+          <li>
+            <a href="#" v-on:click="toggle">Home</a>
+          </li>
+          <li>
+            <a href="#slides" v-on:click="toggle">About US</a>
+          </li>
+          <li>
+            <router-link to="/register" class="accomdation" exact>
+              <a href v-on:click="toggle">Events</a>
+            </router-link>
+          </li>
+          <!-- <li>
+            <a href="#slides" v-on:click="toggle">Gallery</a>
+          </li>
+          <li>
+            <a href="#slides" v-on:click="toggle">Sponsors</a>
+          </li>-->
+          <li>
+            <a href="#slides" v-on:click="toggle">Accomodation</a>
+          </li>
+          <li>
+            <a href="#footer" v-on:click="toggle">Team</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </template>
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,600,700");
@@ -59,23 +78,41 @@ nav ul {
 }
 nav ul li {
   display: inline-block;
+  &:hover {
+    // display: none;
+  }
 }
-li:hover {
-  opacity: 1;
+li::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+li:hover::after {
+  width: 100%;
+}
+nav ul li:not(:first-child) {
+  margin-left: 1.2em;
+  // opacity: 0.8;
 }
 
 nav ul li:not(:first-child) {
-  margin-left: 48px;
-  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
 }
 
-nav ul li:nth-child(3) {
+nav ul li:last-child {
   margin-right: 24px;
 }
 
 nav ul li a {
   display: inline-block;
   outline: none;
+  margin-bottom: 3px;
   color: white;
   text-transform: uppercase;
   text-decoration: none;
@@ -86,10 +123,26 @@ nav ul li a {
 .hidden {
   display: none;
 }
-@media screen and (max-width: 864px) {
+@media screen and (min-width: 500px) {
+  .logo {
+    img {
+      width: 10em !important;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
   .logo {
     padding: 0;
+    margin: 0;
   }
+}
+
+@media screen and (max-width: 864px) {
+  // .logo {
+  //   padding: 0;
+  //   margin: 0;
+  // }
   .nav-wrapper {
     position: fixed;
     width: 100%;
@@ -129,6 +182,12 @@ nav ul li a {
   }
   .nav-wrapper ul li:nth-child(5) a {
     transition-delay: 0.6s;
+  }
+  .nav-wrapper ul li:nth-child(6) a {
+    transition-delay: 0.7s;
+  }
+  .nav-wrapper ul li:nth-child(7) a {
+    transition-delay: 0.8s;
   }
   .nav-wrapper ul li:not(:first-child) {
     margin-left: 0;
@@ -214,15 +273,12 @@ nav ul li a {
 </style>
 <script>
 export default {
-    name:'Nav',
-    methods:{
-     
-      toggle() {
-          var checkBox = document.getElementsByClassName("hidden");
-          checkBox.nav.checked  = !checkBox.nav.checked;
-      }
-    
+  name: "Nav",
+  methods: {
+    toggle() {
+      var checkBox = document.getElementsByClassName("hidden");
+      checkBox.nav.checked = !checkBox.nav.checked;
     }
-   
-}
+  }
+};
 </script>
