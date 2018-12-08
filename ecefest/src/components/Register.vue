@@ -57,16 +57,25 @@
     </div>
 
     <div class="accomdation">
-      <h1>For Accommodation</h1>
-      <address>Contact
+      <h1>For Accommodation Contact</h1>
+      <address style="
+      margin-left: 3%;
+    width: fit-content;
+">
         <br>Roopesh : 7702298660
         <br>Prudhvi : 9885470848
         <br>Manikanta : 7095254383
         <br>Lavakumar : 7032944248
-        <br>Maksudh : 7093755784
-        <br>Naresh : 9000239815
         <br>
       </address>
+      <p style="
+    position: absolute;
+    top: 40%;
+    right: 10%;
+">Maksudh : 7093755784
+        <br>
+        <br>Naresh : 9000239815
+      </p>
     </div>
     <div class="eventheader copy">
       <router-link to="/">
@@ -99,7 +108,9 @@
           <h1>CONTACT</h1>
 
           <h2>Student Coordinators</h2>
-          <p>
+          <p :class="`para${contentid}`" style="
+    float: left;
+">
             {{ content.student }} :
             <span style="color:#240f50">{{ content.contact }}</span>
           </p>
@@ -344,13 +355,23 @@ span.gobackwithsvg {
   margin: 3% 0% 0% 0%;
   text-transform: capitalize;
   text-align: center;
+  position: relative;
   font-size: 1.3em;
   padding: 3% 0 2% 0;
 
   address {
-    line-height: 1.3em;
+    line-height: 1.6em;
     letter-spacing: 2px;
     margin-top: 2%;
+  }
+
+  @media only screen and (min-width: 760px) {
+    p {
+      right: 20% !important;
+    }
+    address {
+      margin-left: 13% !important;
+    }
   }
 }
 .workshopcontainer {
@@ -540,6 +561,15 @@ span.gobackwithsvg {
   .nontech {
     margin: 1% 20% 5% 20%;
   }
+}
+
+.para5,
+.para6,
+.para7,
+.para8,
+.para9,
+.para10 {
+  float: none !important;
 }
 </style>
 

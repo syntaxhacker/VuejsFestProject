@@ -158,7 +158,7 @@
           </h1>
         </div>
         <div class="locationdetailsinmap">
-          <!-- <iframe
+          <iframe
             class="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.103639601092!2d78.7824993144896!3d13.651459103289604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb28d2995aaaab3%3A0xc4ba9363ecd567ae!2sJNTUA+College+of+Engineering+Kalikiri!5e0!3m2!1sen!2sin!4v1541750063358"
             width="400"
@@ -166,7 +166,7 @@
             frameborder="0"
             style="border:0"
             allowfullscreen
-          ></iframe> -->
+          ></iframe>
         </div>
       </div>
     </div>
@@ -256,7 +256,7 @@ export default {
             img:"https://i.imgur.com/Bq2wHe8.jpg"
           },
           {
-            name:'PPT',
+            name:'Poster and PPT',
             img:"https://i.imgur.com/D1v7Ki7.jpg"
           },
           {
@@ -264,7 +264,7 @@ export default {
             img:"https://i.imgur.com/0AaBySP.jpg"
           },
           {
-            name:'Poster ',
+            name:'Culturals ',
             img:"https://i.imgur.com/Ee204QI.jpg"
           },
           {
@@ -472,7 +472,7 @@ img{
     grid-column-gap: 7%;
     
     margin: 8% 5% 6% 0%;
-  div:nth-child(3) ,div:nth-child(5) {
+  div:nth-child(3) ,div:nth-child(5) ,div:nth-child(2) {
     h1{
       right: 20% !important;
     }
