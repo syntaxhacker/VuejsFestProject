@@ -2,6 +2,9 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "@/components/Home";
 import Register from "@/components/Register";
+
+var VueTouch = require('vue-touch');
+Vue.use(VueTouch, {name: 'v-touch'});
 Vue.use(Router);
 
 const router = new Router({

@@ -1,33 +1,35 @@
 <template>
   <!-- <div id="demo"> -->
-  <div id="slider">
-    <input checked type="radio" name="slider" id="slide1" selected="false">
-    <input type="radio" name="slider" id="slide2" selected="false">
-    <input type="radio" name="slider" id="slide3" selected="false">
-    <input type="radio" name="slider" id="slide4" selected="false">
-    <div id="slides">
-      <h1>About Us</h1>
-      <div id="overflow">
-        <div class="inner">
-          <article v-for="item in items" class="slide" :key="item.id">
-            <div class="image-container">
-              <img :src="item.img" alt="item.title">
-            </div>
-            <div class="title">{{item.title}}</div>
-            <div class="teaser">{{item.content}}</div>
-            <!-- <a href="http://www.jntuacek.ac.in/about-us/" target="_blank"><button>READ MORE   → </button></a> -->
-            <a :href="item.website" target="_blank">
-              <button>READ MORE →</button>
-            </a>
-          </article>
+  <v-touch v-on:swipeleft="onSwiperight">
+    <div id="slider">
+      <input checked type="radio" name="slider" id="slide1" selected="false">
+      <input type="radio" name="slider" id="slide2" selected="false">
+      <input type="radio" name="slider" id="slide3" selected="false">
+      <input type="radio" name="slider" id="slide4" selected="false">
+      <div id="slides">
+        <h1>About Us</h1>
+        <div id="overflow">
+          <div class="inner">
+            <article v-for="item in items" class="slide" :key="item.id">
+              <div class="image-container">
+                <img :src="item.img" alt="item.title">
+              </div>
+              <div class="title">{{item.title}}</div>
+              <div class="teaser">{{item.content}}</div>
+              <!-- <a href="http://www.jntuacek.ac.in/about-us/" target="_blank"><button>READ MORE   → </button></a> -->
+              <a :href="item.website" target="_blank">
+                <button>READ MORE →</button>
+              </a>
+            </article>
+          </div>
         </div>
       </div>
+      <label for="slide1"></label>
+      <label for="slide2"></label>
+      <label for="slide3"></label>
+      <!-- <label for="slide4"></label> -->
     </div>
-    <label for="slide1"></label>
-    <label for="slide2"></label>
-    <label for="slide3"></label>
-    <!-- <label for="slide4"></label> -->
-  </div>
+  </v-touch>
 </template>
 
 <style lang="scss" scoped>
@@ -217,20 +219,31 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    //   swipe() {
+    //     var el = document.getElementsByClassName("slide")[0];
+    //     // .addEventListener("touchstart", this.handleStart, false);
+    //     console.log(el);
+    //     console.log("initialized.");
+    //   },
+    //   handleStart(e) {
+    //     console.log(e);
+    //   }
+    // },
+    // created() {
+    //   this.swipe();
+
+    onSwiperight() {
+      if (document.querySelector("#slide1").checked == true)
+        document.querySelector("#slide2").checked = true;
+      else if (document.querySelector("#slide2").checked == true)
+        document.querySelector("#slide3").checked = true;
+      else if (document.querySelector("#slide3").checked == true)
+        document.querySelector("#slide1").checked = true;
+
+      // console.log(el);
+    }
   }
-  // methods: {
-  //   swipe() {
-  //     var el = document.getElementsByClassName("slide")[0];
-  //     // .addEventListener("touchstart", this.handleStart, false);
-  //     console.log(el);
-  //     console.log("initialized.");
-  //   },
-  //   handleStart(e) {
-  //     console.log(e);
-  //   }
-  // },
-  // created() {
-  //   this.swipe();
-  // }
 };
 </script>
