@@ -1,9 +1,9 @@
 <template>
-    <div class="block" v-on:click="modalevent"  >
-        <img :src="details.img" :alt="details.name" class="refimg">
-        <h1 class="name">{{ details.name }}</h1>
-        <h1 class="priceofevent"> {{ details.price }}</h1>
-    </div>
+  <div class="block" v-on:click="modalevent">
+    <img :src="details.img" :alt="details.name" class="refimg">
+    <h1 class="name">{{ details.name }}</h1>
+    <h1 class="priceofevent">{{ details.price }}</h1>
+  </div>
 </template>
 <style lang="scss" scoped>
 .block {
@@ -28,7 +28,11 @@
     // font-family: "Caveat Brush", cursive;
     font-family: "Permanent Marker", cursive !important;
   }
-
+  @media screen and (min-width: 375px) and (max-width: 500px) {
+    .name {
+      font-size: 2.2em;
+    }
+  }
   .priceofevent {
     &::after {
       content: "₹";
@@ -45,13 +49,12 @@
 </style>
 <script>
 export default {
-    name:'Eventblock',
-    props: ["details"],
-    methods:{
-          modalevent(){
-              document.getElementsByClassName("coolmodal")[0].style.display ='flex';
-           
-          }
-      }
-}
+  name: "Eventblock",
+  props: ["details"],
+  methods: {
+    modalevent() {
+      document.getElementsByClassName("coolmodal")[0].style.display = "flex";
+    }
+  }
+};
 </script>

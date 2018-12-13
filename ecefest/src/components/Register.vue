@@ -107,7 +107,7 @@
         <section class="contact">
           <h1>CONTACT</h1>
 
-          <h2>Student Coordinators</h2>
+          <h2>Student Organisers</h2>
           <p :class="`para${contentid}`" style="
     float: left;
 ">
@@ -435,13 +435,13 @@ span.gobackwithsvg {
   right: 50%;
 }
 
-@media only screen and (min-width: 750px) {
-  .about {
-    img {
-      width: 40em;
-    }
-  }
-}
+// @media only screen and (min-width: 750px) {
+//   .about {
+//     img {
+//       width: 40em !important;
+//     }
+//   }
+// }
 @media only screen and (max-width: 500px) {
   .modalcontent {
     width: 70vw !important;
@@ -570,6 +570,56 @@ span.gobackwithsvg {
 .para9,
 .para10 {
   float: none !important;
+}
+
+@media only screen and (max-width: 330px) {
+  .accomdation {
+    font-size: 0.8em !important;
+  }
+}
+.aboutcontent {
+  text-align: left;
+}
+@media only screen and (max-width: 600px) {
+  .aboutcontent {
+    font-size: 2.2em;
+    line-height: 1.2;
+  }
+  .close {
+    font-size: 4em !important;
+  }
+  .details {
+    div {
+      font-size: 1.9em;
+      line-height: 1.4;
+    }
+  }
+
+  .contact {
+    margin-bottom: 10% !important;
+    h2,
+    p {
+      font-size: 1.8em;
+    }
+  }
+  .button {
+    padding: 1.4em;
+    font-size: 1.3em;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .about {
+    img {
+      width: 43em !important;
+    }
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 480px) {
+  .about {
+    img {
+      width: 50em !important;
+    }
+  }
 }
 </style>
 

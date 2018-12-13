@@ -1,10 +1,13 @@
 <template>
   <div class="maincontainer">
-    <!-- <div class="warn">
-      <h2>Work Under Progress
-        <br>Come Back Later....
-      </h2>
-    </div> -->
+    <div class="warn" style="
+    position: absolute;
+    position: fixed;
+    top: 0;
+    
+    background-color: rgb(45, 45, 45);
+    z-index: 1;
+"></div>
     <div class="container headerone" id="home">
       <Nav/>
       <div class="left">
@@ -99,6 +102,7 @@
 ">MORE →</button>
   </router-link>
 </div>
+<Logoslider />
     <!-- <div class="container headerthree" id="coordinators">
     <div class="coordinatorsref">
       <div class="coordinatorssvg">
@@ -158,7 +162,7 @@
           </h1>
         </div>
         <div class="locationdetailsinmap">
-          <!-- <iframe
+          <iframe
             class="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.103639601092!2d78.7824993144896!3d13.651459103289604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb28d2995aaaab3%3A0xc4ba9363ecd567ae!2sJNTUA+College+of+Engineering+Kalikiri!5e0!3m2!1sen!2sin!4v1541750063358"
             width="400"
@@ -166,7 +170,7 @@
             frameborder="0"
             style="border:0"
             allowfullscreen
-          ></iframe> -->
+          ></iframe>
         </div>
       </div>
     </div>
@@ -238,6 +242,7 @@
 <script>
 import Imageslider from './Imageslider.vue';
 import Nav from './Nav.vue';
+import Logoslider from './Logoslider.vue';
 
 export default {
   name: 'Home',
@@ -433,7 +438,7 @@ function startColorChange() {
     
   },
   components: {
-     Imageslider ,Nav
+     Imageslider ,Nav , Logoslider
   }
 }
 </script>
@@ -654,7 +659,13 @@ body {
   top: 6em;
   position: absolute;
 }
+@media only screen and (max-width: 350px) {
 
+.test{
+  font-size: 0.7em !important;
+
+}
+}
 .mainnav {
   margin-right: 2em;
   margin-top: 1.5em;
@@ -1395,7 +1406,7 @@ body {
 
 @media screen and (max-width: 410px) {
   .warn {
-   height: 15vh;
+   height: 9vh;
     h2 {
       padding-top: 10vw;
     }
@@ -1676,6 +1687,11 @@ body {
 
 @media only screen and (min-height: 680px)and (max-height: 800px) {
 
+}
+@media only screen and (min-width: 500px) {
+.warn{
+  display: none;
+}
 }
 @media only screen and (max-height: 600px) {
   .description{

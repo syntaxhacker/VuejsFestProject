@@ -135,6 +135,9 @@ nav ul li a {
   .logo {
     padding: 0;
     margin: 0;
+
+    position: fixed;
+    z-index: 1;
   }
 }
 

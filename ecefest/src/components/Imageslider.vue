@@ -1,35 +1,45 @@
 <template>
   <!-- <div id="demo"> -->
-  <v-touch v-on:swipeleft="onSwiperight">
-    <div id="slider">
-      <input checked type="radio" name="slider" id="slide1" selected="false">
-      <input type="radio" name="slider" id="slide2" selected="false">
-      <input type="radio" name="slider" id="slide3" selected="false">
-      <input type="radio" name="slider" id="slide4" selected="false">
-      <div id="slides">
-        <h1>About Us</h1>
-        <div id="overflow">
-          <div class="inner">
-            <article v-for="item in items" class="slide" :key="item.id">
-              <div class="image-container">
-                <img :src="item.img" alt="item.title">
-              </div>
+  <div id="slider">
+    <input checked type="radio" name="slider" id="slide1" selected="false">
+    <input type="radio" name="slider" id="slide2" selected="false">
+    <input type="radio" name="slider" id="slide3" selected="false">
+    <input type="radio" name="slider" id="slide4" selected="false">
+    <div id="slides">
+      <h1 style="
+    margin: 3% 0;
+">About Us</h1>
+
+      <div id="overflow">
+        <div class="inner">
+          <article v-for="item in items" class="slide" :key="item.id">
+            <div class="image-container">
+              <img :src="item.img" alt="item.title">
+            </div>
+            <v-touch v-on:swiperight="swipeRight">
               <div class="title">{{item.title}}</div>
-              <div class="teaser">{{item.content}}</div>
-              <!-- <a href="http://www.jntuacek.ac.in/about-us/" target="_blank"><button>READ MORE   → </button></a> -->
-              <a :href="item.website" target="_blank">
-                <button>READ MORE →</button>
-              </a>
-            </article>
-          </div>
+              <v-touch v-on:swipeleft="swipeLeft">
+                <div class="teaser">{{item.content}}</div>
+              </v-touch>
+            </v-touch>
+            <!-- <a href="http://www.jntuacek.ac.in/about-us/" target="_blank"><button>READ MORE   → </button></a> -->
+            <a :href="item.website" target="_blank">
+              <button>READ MORE →</button>
+            </a>
+          </article>
         </div>
       </div>
-      <label for="slide1"></label>
-      <label for="slide2"></label>
-      <label for="slide3"></label>
-      <!-- <label for="slide4"></label> -->
+      <img
+        src="https://image.flaticon.com/icons/svg/1093/1093258.svg"
+        alt="swipe"
+        style="width:3em;height:auto"
+      >
     </div>
-  </v-touch>
+    <label for="slide1"></label>
+    <label for="slide2"></label>
+    <label for="slide3"></label>
+    <!-- <label for="slide4"></label> -->
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -58,6 +68,13 @@ button {
     text-align: left;
     font-weight: 300;
     line-height: 1.6;
+  }
+}
+@media screen and (max-width: 430px) {
+  #slides {
+    h1 {
+      margin: 5% 0 !important;
+    }
   }
 }
 @media screen and (max-width: 410px) {
@@ -234,15 +251,23 @@ export default {
     // created() {
     //   this.swipe();
 
-    onSwiperight() {
+    swipeLeft() {
       if (document.querySelector("#slide1").checked == true)
         document.querySelector("#slide2").checked = true;
       else if (document.querySelector("#slide2").checked == true)
         document.querySelector("#slide3").checked = true;
       else if (document.querySelector("#slide3").checked == true)
         document.querySelector("#slide1").checked = true;
+    },
 
-      // console.log(el);
+    swipeRight() {
+      if (document.querySelector("#slide1").checked == true)
+        document.querySelector("#slide3").checked = true;
+      else if (document.querySelector("#slide2").checked == true)
+        document.querySelector("#slide1").checked = true;
+      else if (document.querySelector("#slide3").checked == true)
+        document.querySelector("#slide2").checked = true;
+      // console.log("test");
     }
   }
 };
