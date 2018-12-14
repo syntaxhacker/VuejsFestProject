@@ -33,7 +33,9 @@
             <a href="#slides" v-on:click="toggle">Sponsors</a>
           </li>-->
           <li>
-            <a href="#slides" v-on:click="toggle">Accomodation</a>
+            <router-link to="/accomdation" class="accomdation" exact>
+              <a v-on:click="toggle">Accomodation</a>
+            </router-link>
           </li>
           <li>
             <a href="#footer" v-on:click="toggle">Team</a>
@@ -229,6 +231,7 @@ nav ul li a {
     background: #fff;
     border-radius: 2px;
     margin-left: 14px;
+    margin-right: 5px;
   }
   .nav-btn i:nth-child(1) {
     margin-top: 16px;
@@ -285,3 +288,4 @@ export default {
   }
 };
 </script>
+

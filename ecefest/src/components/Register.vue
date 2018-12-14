@@ -56,27 +56,6 @@
       <Eventblock :details="nontechevents[4]" @click.native="clicked(9)"/>
     </div>
 
-    <div class="accomdation">
-      <h1>For Accommodation Contact</h1>
-      <address style="
-      margin-left: 3%;
-    width: fit-content;
-">
-        <br>Roopesh : 7702298660
-        <br>Prudhvi : 9885470848
-        <br>Manikanta : 7095254383
-        <br>Lavakumar : 7032944248
-        <br>
-      </address>
-      <p style="
-    position: absolute;
-    top: 40%;
-    right: 10%;
-">Maksudh : 7093755784
-        <br>
-        <br>Naresh : 9000239815
-      </p>
-    </div>
     <div class="eventheader copy">
       <router-link to="/">
         <button>
@@ -156,6 +135,12 @@
   top: 1px;
 }
 
+.heading {
+  border-bottom: 5px solid;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-radius: 2px;
+}
 .coolmodal {
   width: 100%;
   height: 100%;
@@ -255,11 +240,17 @@ button {
 .eventheader {
   position: sticky;
   top: 0px;
-  height: 15vh;
+  height: 10vh;
   position: relative;
   -webkit-box-shadow: 0px 9px 101px -33px rgba(0, 0, 0, 0.86);
   -moz-box-shadow: 0px 9px 101px -33px rgba(0, 0, 0, 0.86);
   box-shadow: 0px 9px 101px -33px rgba(0, 0, 0, 0.86);
+}
+
+@media screen and (min-width: 500px) {
+  .eventheader {
+    height: 15vh;
+  }
 }
 button {
   outline: none;
@@ -348,30 +339,6 @@ span.gobackwithsvg {
     height: 3em;
     color: #240f50;
     text-align: center;
-  }
-}
-.accomdation {
-  background-color: #240f50;
-  margin: 3% 0% 0% 0%;
-  text-transform: capitalize;
-  text-align: center;
-  position: relative;
-  font-size: 1.3em;
-  padding: 3% 0 2% 0;
-
-  address {
-    line-height: 1.6em;
-    letter-spacing: 2px;
-    margin-top: 2%;
-  }
-
-  @media only screen and (min-width: 760px) {
-    p {
-      right: 20% !important;
-    }
-    address {
-      margin-left: 13% !important;
-    }
   }
 }
 .workshopcontainer {
@@ -540,10 +507,6 @@ span.gobackwithsvg {
   .workshopcontainer {
     margin: 3% 10%;
   }
-
-  .accomdation {
-    font-size: 1.1em;
-  }
 }
 
 @media only screen and (max-width: 310px) {
@@ -573,9 +536,6 @@ span.gobackwithsvg {
 }
 
 @media only screen and (max-width: 330px) {
-  .accomdation {
-    font-size: 0.8em !important;
-  }
 }
 .aboutcontent {
   text-align: left;
@@ -618,6 +578,13 @@ span.gobackwithsvg {
   .about {
     img {
       width: 50em !important;
+    }
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .about {
+    img {
+      width: 45em !important;
     }
   }
 }

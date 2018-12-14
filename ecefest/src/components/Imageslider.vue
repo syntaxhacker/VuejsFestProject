@@ -77,6 +77,13 @@ button {
     }
   }
 }
+@media screen and (min-width: 600px) {
+  #slides {
+    h1 {
+      margin: 2% 0 !important;
+    }
+  }
+}
 @media screen and (max-width: 410px) {
   .slide {
     margin-bottom: 3%;
@@ -102,9 +109,8 @@ button {
   // height: 60vh;
   height: 100%;
   padding-top: 2%;
-  padding-bottom: 5%;
+  padding-bottom: 2%;
 }
-
 #overflow {
   width: 100%;
   height: auto;
@@ -117,23 +123,9 @@ button {
 }
 
 #slides .inner {
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  -ms-transform: translateZ(0);
   transform: translateZ(0);
-
-  -webkit-transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
-  -moz-transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
-  -o-transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
-  -ms-transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
-  transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
-
-  -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-  -moz-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-  -o-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-  -ms-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
-  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 800ms cubic-bezier(0.12, 0.29, 0.16, 1.16);
+  transition-timing-function: cubic-bezier(0.12, 0.29, 0.16, 1.16);
 }
 
 #slides article {
@@ -238,19 +230,6 @@ export default {
     };
   },
   methods: {
-    //   swipe() {
-    //     var el = document.getElementsByClassName("slide")[0];
-    //     // .addEventListener("touchstart", this.handleStart, false);
-    //     console.log(el);
-    //     console.log("initialized.");
-    //   },
-    //   handleStart(e) {
-    //     console.log(e);
-    //   }
-    // },
-    // created() {
-    //   this.swipe();
-
     swipeLeft() {
       if (document.querySelector("#slide1").checked == true)
         document.querySelector("#slide2").checked = true;
@@ -267,7 +246,6 @@ export default {
         document.querySelector("#slide1").checked = true;
       else if (document.querySelector("#slide3").checked == true)
         document.querySelector("#slide2").checked = true;
-      // console.log("test");
     }
   }
 };

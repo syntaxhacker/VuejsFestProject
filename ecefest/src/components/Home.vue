@@ -93,7 +93,7 @@
     width: 10em;
     border: 0;
     font-size: 1em;
-    margin-bottom: 5%;
+    margin-bottom: 3.5%;
     background-color: black;
     color: white;
     box-shadow: -2px 3px 30px -4px rgba(0,0,0,0.75);
@@ -102,6 +102,18 @@
 ">MORE →</button>
   </router-link>
 </div>
+<h1 data-v-531e267c="" style="margin: 3% 0px;
+color: white;
+text-transform: uppercase;
+letter-spacing: 1.4px;
+background-color: blue;
+background-color: #a4508b;background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+background-color: #0cbaba;background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+padding: 3%;
+margin: 0;
+font-size: 1em;
+text-align: center;">Our Previous Sponsors</h1>
 <Logoslider />
     <!-- <div class="container headerthree" id="coordinators">
     <div class="coordinatorsref">
@@ -1145,7 +1157,7 @@ body {
     h1,
     p {
       color: #000;
-      margin-top: 50px;
+      margin-top: 15px;
       justify-content: center;
       text-align: center;
       width: 25vh;

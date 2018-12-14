@@ -2,9 +2,10 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "@/components/Home";
 import Register from "@/components/Register";
+import Accomdation from "@/components/Accomdation";
 
-var VueTouch = require('vue-touch');
-Vue.use(VueTouch, {name: 'v-touch'});
+var VueTouch = require("vue-touch");
+Vue.use(VueTouch, { name: "v-touch" });
 Vue.use(Router);
 
 const router = new Router({
@@ -13,12 +14,12 @@ const router = new Router({
     if (to.hash) {
       return {
         selector: to.hash
-      }
+      };
     }
     if (savedPosition) {
-      return savedPosition
+      return savedPosition;
     } else {
-      return {x: 0, y: 0}
+      return { x: 0, y: 0 };
     }
   },
 
@@ -36,6 +37,11 @@ const router = new Router({
       path: "/register",
       name: "Register",
       component: Register
+    },
+    {
+      path: "/accomdation",
+      name: "Accomdation",
+      component: Accomdation
     }
   ]
 });
@@ -57,4 +63,3 @@ router.afterEach((to, from) => {
 });
 
 export default router;
-
